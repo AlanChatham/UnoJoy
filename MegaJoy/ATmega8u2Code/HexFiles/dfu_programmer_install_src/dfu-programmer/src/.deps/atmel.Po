@@ -1,0 +1,119 @@
+atmel.o atmel.o: atmel.c /usr/include/stdio.h /usr/include/_types.h \
+  /usr/include/sys/_types.h /usr/include/sys/cdefs.h \
+  /usr/include/machine/_types.h /usr/include/i386/_types.h \
+  /usr/include/secure/_stdio.h /usr/include/secure/_common.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/string.h /usr/include/secure/_string.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h \
+  /usr/include/errno.h /usr/include/sys/errno.h dfu-bool.h dfu-device.h \
+  ../config.h /usr/local/include/libusb-1.0/libusb.h \
+  /usr/include/sys/time.h /usr/include/sys/_structs.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/sys/_select.h \
+  /usr/include/sys/types.h /usr/include/sys/appleapiopts.h \
+  /usr/include/machine/types.h /usr/include/i386/types.h \
+  /usr/include/i386/_types.h /usr/include/machine/endian.h \
+  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
+  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/libkern/i386/_OSByteOrder.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
+  /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h \
+  /Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h \
+  /usr/include/limits.h /usr/include/machine/limits.h \
+  /usr/include/i386/limits.h /usr/include/i386/_limits.h \
+  /usr/include/sys/syslimits.h arguments.h atmel.h dfu.h util.h
+
+/usr/include/stdio.h:
+
+/usr/include/_types.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/i386/_types.h:
+
+/usr/include/secure/_stdio.h:
+
+/usr/include/secure/_common.h:
+
+/usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h:
+
+/usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h:
+
+/usr/include/string.h:
+
+/usr/include/secure/_string.h:
+
+/usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+dfu-bool.h:
+
+dfu-device.h:
+
+../config.h:
+
+/usr/local/include/libusb-1.0/libusb.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/sys/_structs.h:
+
+/usr/include/time.h:
+
+/usr/include/_structs.h:
+
+/usr/include/sys/_select.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/appleapiopts.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/i386/types.h:
+
+/usr/include/i386/_types.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/i386/endian.h:
+
+/usr/include/sys/_endian.h:
+
+/usr/include/libkern/_OSByteOrder.h:
+
+/usr/include/libkern/i386/_OSByteOrder.h:
+
+/usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h:
+
+/usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h:
+
+/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h:
+
+/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/machine/limits.h:
+
+/usr/include/i386/limits.h:
+
+/usr/include/i386/_limits.h:
+
+/usr/include/sys/syslimits.h:
+
+arguments.h:
+
+atmel.h:
+
+dfu.h:
+
+util.h:

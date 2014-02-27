@@ -1,0 +1,23 @@
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+##############################################################
+
+leojoy.name=LeoJoy!
+leojoy.upload.protocol=avr109
+leojoy.upload.maximum_size=28672
+leojoy.upload.speed=57600
+leojoy.upload.disable_flushing=true
+leojoy.bootloader.low_fuses=0xff
+leojoy.bootloader.high_fuses=0xd8
+leojoy.bootloader.extended_fuses=0xcb
+leojoy.bootloader.path=caterina
+leojoy.bootloader.file=Caterina-Leonardo.hex
+leojoy.bootloader.unlock_bits=0x3F
+leojoy.bootloader.lock_bits=0x2F
+leojoy.build.mcu=atmega32u4
+leojoy.build.f_cpu=16000000L
+leojoy.build.vid=0x20A0
+leojoy.build.pid=0x41B2
+leojoy.build.core=leojoy
+leojoy.build.variant=leojoy
+

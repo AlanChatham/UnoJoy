@@ -1,0 +1,1882 @@
+
+UnoJoy.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  00000ad8  00000b6c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000ad8  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000015  00800102  00800102  00000b6e  2**0
+                  ALLOC
+  3 .stab         00000750  00000000  00000000  00000b70  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000000eb  00000000  00000000  000012c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 000000a8  00000000  00000000  000013b0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001285  00000000  00000000  00001458  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000047f  00000000  00000000  000026dd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000077d  00000000  00000000  00002b5c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000001c0  00000000  00000000  000032dc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000621  00000000  00000000  0000349c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000b58  00000000  00000000  00003abd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000060  00000000  00000000  00004615  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 ff 00 	jmp	0x1fe	; 0x1fe <__ctors_end>
+   4:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+   8:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+   c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  10:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  14:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  18:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  1c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  20:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  24:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  28:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  2c:	0c 94 0e 03 	jmp	0x61c	; 0x61c <__vector_11>
+  30:	0c 94 2f 03 	jmp	0x65e	; 0x65e <__vector_12>
+  34:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  38:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  3c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  40:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  44:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  48:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  4c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  50:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  54:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  58:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  5c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  60:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  64:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  68:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  6c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  70:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  74:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  78:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  7c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  80:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  84:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  88:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  8c:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  90:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+  94:	0c 94 1c 01 	jmp	0x238	; 0x238 <__bad_interrupt>
+
+00000098 <gamepad_idle_state>:
+  98:	00 00 08 80 80 80 80 00 00 00 00 00 00 00 00 00     ................
+  a8:	00 00 00                                            ...
+
+000000ab <descriptor_list>:
+  ab:	00 01 00 00 ea 00 12 00 02 00 00 fc 00 22 00 21     .............".!
+  bb:	00 00 0e 01 09 00 22 00 00 1e 01 70 00 03 00 00     ......"....p....
+  cb:	8e 01 04 01 03 09 04 92 01 48 02 03 09 04 dc 01     .........H......
+  db:	20                                                   
+
+000000dc <endpoint_config_table>:
+  dc:	01 c1 32 00 00 00                                   ..2...
+
+000000e2 <magic_init_bytes>:
+  e2:	21 26 01 07 00 00 00 00                             !&......
+
+000000ea <device_descriptor>:
+  ea:	12 01 10 01 00 00 00 40 c4 10 c0 82 00 01 01 02     .......@........
+  fa:	00 01                                               ..
+
+000000fc <config1_descriptor>:
+  fc:	09 02 22 00 01 01 00 80 32 09 04 00 00 01 03 00     ..".....2.......
+ 10c:	00 00 09 21 11 01 00 01 22 70 00 07 05 81 03 40     ...!...."p.....@
+ 11c:	00 0a                                               ..
+
+0000011e <gamepad_hid_report_desc>:
+ 11e:	05 01 09 05 a1 01 15 00 25 01 35 00 45 01 75 01     ........%.5.E.u.
+ 12e:	95 0e 05 09 19 01 29 0e 81 02 95 02 81 01 05 01     ......).........
+ 13e:	25 07 46 3b 01 75 04 95 01 65 14 09 39 81 42 65     %.F;.u...e..9.Be
+ 14e:	00 95 01 81 01 26 ff 00 46 ff 00 09 30 09 31 09     .....&..F...0.1.
+ 15e:	32 09 35 75 08 95 04 81 02 06 00 ff 09 20 09 21     2.5u......... .!
+ 16e:	09 22 09 23 09 24 09 25 09 26 09 27 09 28 09 29     .".#.$.%.&.'.(.)
+ 17e:	09 2a 09 2b 95 0c 81 02 0a 21 26 95 08 b1 02 c0     .*.+.....!&.....
+
+0000018e <string0>:
+ 18e:	04 03 09 04                                         ....
+
+00000192 <string1>:
+ 192:	48 03 4f 00 70 00 65 00 6e 00 43 00 68 00 6f 00     H.O.p.e.n.C.h.o.
+ 1a2:	72 00 64 00 20 00 58 00 20 00 52 00 4d 00 49 00     r.d. .X. .R.M.I.
+ 1b2:	54 00 20 00 45 00 78 00 65 00 72 00 74 00 69 00     T. .E.x.e.r.t.i.
+ 1c2:	6f 00 6e 00 20 00 47 00 61 00 6d 00 65 00 73 00     o.n. .G.a.m.e.s.
+ 1d2:	20 00 4c 00 61 00 62 00 00 00                        .L.a.b...
+
+000001dc <string2>:
+ 1dc:	20 03 55 00 6e 00 6f 00 4a 00 6f 00 79 00 20 00      .U.n.o.J.o.y. .
+ 1ec:	4a 00 6f 00 79 00 73 00 74 00 69 00 63 00 6b 00     J.o.y.s.t.i.c.k.
+	...
+
+000001fe <__ctors_end>:
+ 1fe:	11 24       	eor	r1, r1
+ 200:	1f be       	out	0x3f, r1	; 63
+ 202:	cf ef       	ldi	r28, 0xFF	; 255
+ 204:	d2 e0       	ldi	r29, 0x02	; 2
+ 206:	de bf       	out	0x3e, r29	; 62
+ 208:	cd bf       	out	0x3d, r28	; 61
+
+0000020a <__do_copy_data>:
+ 20a:	11 e0       	ldi	r17, 0x01	; 1
+ 20c:	a0 e0       	ldi	r26, 0x00	; 0
+ 20e:	b1 e0       	ldi	r27, 0x01	; 1
+ 210:	e8 ed       	ldi	r30, 0xD8	; 216
+ 212:	fa e0       	ldi	r31, 0x0A	; 10
+ 214:	02 c0       	rjmp	.+4      	; 0x21a <__do_copy_data+0x10>
+ 216:	05 90       	lpm	r0, Z+
+ 218:	0d 92       	st	X+, r0
+ 21a:	a2 30       	cpi	r26, 0x02	; 2
+ 21c:	b1 07       	cpc	r27, r17
+ 21e:	d9 f7       	brne	.-10     	; 0x216 <__do_copy_data+0xc>
+
+00000220 <__do_clear_bss>:
+ 220:	11 e0       	ldi	r17, 0x01	; 1
+ 222:	a2 e0       	ldi	r26, 0x02	; 2
+ 224:	b1 e0       	ldi	r27, 0x01	; 1
+ 226:	01 c0       	rjmp	.+2      	; 0x22a <.do_clear_bss_start>
+
+00000228 <.do_clear_bss_loop>:
+ 228:	1d 92       	st	X+, r1
+
+0000022a <.do_clear_bss_start>:
+ 22a:	a7 31       	cpi	r26, 0x17	; 23
+ 22c:	b1 07       	cpc	r27, r17
+ 22e:	e1 f7       	brne	.-8      	; 0x228 <.do_clear_bss_loop>
+ 230:	0e 94 5d 04 	call	0x8ba	; 0x8ba <main>
+ 234:	0c 94 6a 05 	jmp	0xad4	; 0xad4 <_exit>
+
+00000238 <__bad_interrupt>:
+ 238:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000023c <setControllersToZero>:
+
+#define CPU_PRESCALE(n)	(CLKPR = 0x80, CLKPR = (n))
+
+// This sets up an empty controller data packet and sends it out
+//  to all the controllers attached.
+void setControllersToZero(void){
+ 23c:	cf 93       	push	r28
+ 23e:	df 93       	push	r29
+ 240:	cd b7       	in	r28, 0x3d	; 61
+ 242:	de b7       	in	r29, 0x3e	; 62
+ 244:	27 97       	sbiw	r28, 0x07	; 7
+ 246:	0f b6       	in	r0, 0x3f	; 63
+ 248:	f8 94       	cli
+ 24a:	de bf       	out	0x3e, r29	; 62
+ 24c:	0f be       	out	0x3f, r0	; 63
+ 24e:	cd bf       	out	0x3d, r28	; 61
+	dataForController_t emptyData;
+	emptyData.leftStickX = 128;
+ 250:	4b 81       	ldd	r20, Y+3	; 0x03
+ 252:	41 70       	andi	r20, 0x01	; 1
+ 254:	4b 83       	std	Y+3, r20	; 0x03
+	emptyData.leftStickY = 128;
+ 256:	81 e0       	ldi	r24, 0x01	; 1
+ 258:	8c 83       	std	Y+4, r24	; 0x04
+	emptyData.rightStickX = 128;
+ 25a:	8d 83       	std	Y+5, r24	; 0x05
+	emptyData.rightStickY = 128;
+ 25c:	8e 83       	std	Y+6, r24	; 0x06
+ 25e:	8f 81       	ldd	r24, Y+7	; 0x07
+ 260:	81 60       	ori	r24, 0x01	; 1
+ 262:	8f 83       	std	Y+7, r24	; 0x07
+	sendPS3Data(emptyData);
+ 264:	29 81       	ldd	r18, Y+1	; 0x01
+ 266:	3a 81       	ldd	r19, Y+2	; 0x02
+ 268:	51 e0       	ldi	r21, 0x01	; 1
+ 26a:	61 e0       	ldi	r22, 0x01	; 1
+ 26c:	71 e0       	ldi	r23, 0x01	; 1
+ 26e:	0e 94 f5 01 	call	0x3ea	; 0x3ea <sendPS3Data>
+}
+ 272:	27 96       	adiw	r28, 0x07	; 7
+ 274:	0f b6       	in	r0, 0x3f	; 63
+ 276:	f8 94       	cli
+ 278:	de bf       	out	0x3e, r29	; 62
+ 27a:	0f be       	out	0x3f, r0	; 63
+ 27c:	cd bf       	out	0x3d, r28	; 61
+ 27e:	df 91       	pop	r29
+ 280:	cf 91       	pop	r28
+ 282:	08 95       	ret
+
+00000284 <USART_Init>:
+// Initializes the USART to receive and transmit,
+//  takes in a value you can find in the datasheet
+//  based on desired communication and clock speeds
+void USART_Init(uint16_t baudSetting){
+	// Set baud rate
+	UBRR1 = baudSetting;
+ 284:	90 93 cd 00 	sts	0x00CD, r25
+ 288:	80 93 cc 00 	sts	0x00CC, r24
+	// Enable receiver and transmitter
+	UCSR1B = (1<<RXEN1)|(1<<TXEN1);
+ 28c:	88 e1       	ldi	r24, 0x18	; 24
+ 28e:	80 93 c9 00 	sts	0x00C9, r24
+	// Set frame format: 8data, 1stop bit
+	UCSR1C = (1<<UCSZ10)|(1<<UCSZ11);	
+ 292:	86 e0       	ldi	r24, 0x06	; 6
+ 294:	80 93 ca 00 	sts	0x00CA, r24
+}
+ 298:	08 95       	ret
+
+0000029a <serialRead>:
+// This reads the USART serial port, returning any data that's in the
+//  buffer, or a guaranteed zero if it took longer than timeout ms
+//  Input: uint_16 timeout - milliseconds to wait for data before timing out
+unsigned char serialRead( uint16_t timeout ){
+	// Wait for data to be received 
+	while ( !(UCSR1A & (1<<RXC1)) ){
+ 29a:	08 c0       	rjmp	.+16     	; 0x2ac <serialRead+0x12>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 29c:	ef e9       	ldi	r30, 0x9F	; 159
+ 29e:	ff e0       	ldi	r31, 0x0F	; 15
+ 2a0:	31 97       	sbiw	r30, 0x01	; 1
+ 2a2:	f1 f7       	brne	.-4      	; 0x2a0 <serialRead+0x6>
+ 2a4:	00 c0       	rjmp	.+0      	; 0x2a6 <serialRead+0xc>
+ 2a6:	00 00       	nop
+		_delay_ms(1);
+		timeout--;
+ 2a8:	01 97       	sbiw	r24, 0x01	; 1
+		if (timeout == 0){
+ 2aa:	39 f0       	breq	.+14     	; 0x2ba <serialRead+0x20>
+// This reads the USART serial port, returning any data that's in the
+//  buffer, or a guaranteed zero if it took longer than timeout ms
+//  Input: uint_16 timeout - milliseconds to wait for data before timing out
+unsigned char serialRead( uint16_t timeout ){
+	// Wait for data to be received 
+	while ( !(UCSR1A & (1<<RXC1)) ){
+ 2ac:	20 91 c8 00 	lds	r18, 0x00C8
+ 2b0:	27 ff       	sbrs	r18, 7
+ 2b2:	f4 cf       	rjmp	.-24     	; 0x29c <serialRead+0x2>
+		if (timeout == 0){
+			return 0b0;
+		}			
+	}	
+	// Get and return received data from buffer 
+	return UDR1;
+ 2b4:	80 91 ce 00 	lds	r24, 0x00CE
+ 2b8:	08 95       	ret
+	// Wait for data to be received 
+	while ( !(UCSR1A & (1<<RXC1)) ){
+		_delay_ms(1);
+		timeout--;
+		if (timeout == 0){
+			return 0b0;
+ 2ba:	80 e0       	ldi	r24, 0x00	; 0
+		}			
+	}	
+	// Get and return received data from buffer 
+	return UDR1;
+}
+ 2bc:	08 95       	ret
+
+000002be <serialWrite>:
+
+// This sends out a byte of data via the USART.
+void serialWrite( unsigned char data )
+{
+	// Wait for empty transmit buffer
+	while ( !( UCSR1A & (1<<UDRE1)) ){
+ 2be:	90 91 c8 00 	lds	r25, 0x00C8
+ 2c2:	95 ff       	sbrs	r25, 5
+ 2c4:	fc cf       	rjmp	.-8      	; 0x2be <serialWrite>
+	}	
+	// Put data into buffer, sends the data
+	UDR1 = data;
+ 2c6:	80 93 ce 00 	sts	0x00CE, r24
+}
+ 2ca:	08 95       	ret
+
+000002cc <flushSerialRead>:
+
+void flushSerialRead()
+{
+	unsigned char dummy;
+	while ( UCSR1A & (1<<RXC1) )
+ 2cc:	02 c0       	rjmp	.+4      	; 0x2d2 <flushSerialRead+0x6>
+		dummy = UDR1;
+ 2ce:	80 91 ce 00 	lds	r24, 0x00CE
+}
+
+void flushSerialRead()
+{
+	unsigned char dummy;
+	while ( UCSR1A & (1<<RXC1) )
+ 2d2:	80 91 c8 00 	lds	r24, 0x00C8
+ 2d6:	87 fd       	sbrc	r24, 7
+ 2d8:	fa cf       	rjmp	.-12     	; 0x2ce <flushSerialRead+0x2>
+		dummy = UDR1;
+}
+ 2da:	08 95       	ret
+
+000002dc <LEDon>:
+
+// This turns on one of the LEDs hooked up to the chip
+void LEDon(char ledNumber){
+	DDRD |= 1 << ledNumber;
+ 2dc:	9a b1       	in	r25, 0x0a	; 10
+ 2de:	21 e0       	ldi	r18, 0x01	; 1
+ 2e0:	30 e0       	ldi	r19, 0x00	; 0
+ 2e2:	02 c0       	rjmp	.+4      	; 0x2e8 <LEDon+0xc>
+ 2e4:	22 0f       	add	r18, r18
+ 2e6:	33 1f       	adc	r19, r19
+ 2e8:	8a 95       	dec	r24
+ 2ea:	e2 f7       	brpl	.-8      	; 0x2e4 <LEDon+0x8>
+ 2ec:	92 2b       	or	r25, r18
+ 2ee:	9a b9       	out	0x0a, r25	; 10
+	PORTD &= ~(1 << ledNumber);
+ 2f0:	8b b1       	in	r24, 0x0b	; 11
+ 2f2:	20 95       	com	r18
+ 2f4:	28 23       	and	r18, r24
+ 2f6:	2b b9       	out	0x0b, r18	; 11
+}
+ 2f8:	08 95       	ret
+
+000002fa <LEDoff>:
+
+// And this turns it off
+void LEDoff(char ledNumber){
+	DDRD &= ~(1 << ledNumber);
+ 2fa:	9a b1       	in	r25, 0x0a	; 10
+ 2fc:	21 e0       	ldi	r18, 0x01	; 1
+ 2fe:	30 e0       	ldi	r19, 0x00	; 0
+ 300:	02 c0       	rjmp	.+4      	; 0x306 <__stack+0x7>
+ 302:	22 0f       	add	r18, r18
+ 304:	33 1f       	adc	r19, r19
+ 306:	8a 95       	dec	r24
+ 308:	e2 f7       	brpl	.-8      	; 0x302 <__stack+0x3>
+ 30a:	82 2f       	mov	r24, r18
+ 30c:	80 95       	com	r24
+ 30e:	89 23       	and	r24, r25
+ 310:	8a b9       	out	0x0a, r24	; 10
+	PORTD |= 1 << ledNumber;
+ 312:	8b b1       	in	r24, 0x0b	; 11
+ 314:	82 2b       	or	r24, r18
+ 316:	8b b9       	out	0x0b, r24	; 11
+}
+ 318:	08 95       	ret
+
+0000031a <usb_wait_in_ready>:
+}
+
+// Misc functions to wait for ready and send/receive packets
+static inline void usb_wait_in_ready(void)
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+ 31a:	80 91 e8 00 	lds	r24, 0x00E8
+ 31e:	80 ff       	sbrs	r24, 0
+ 320:	fc cf       	rjmp	.-8      	; 0x31a <usb_wait_in_ready>
+}
+ 322:	08 95       	ret
+
+00000324 <usb_init>:
+// initialize USB
+//  Returns 0 if initialized,
+//          1 if it timed out waiting for connection
+uint8_t usb_init(void) {
+	HW_CONFIG();
+	USB_FREEZE();				// enable USB
+ 324:	80 ea       	ldi	r24, 0xA0	; 160
+ 326:	80 93 d8 00 	sts	0x00D8, r24
+	PLL_CONFIG();				// config PLL
+ 32a:	86 e0       	ldi	r24, 0x06	; 6
+ 32c:	89 bd       	out	0x29, r24	; 41
+	// wait a certain amount of time for PLL lock
+	unsigned long timeoutCounter = 0;
+	while (!(PLLCSR & (1<<PLOCK))){
+ 32e:	80 e0       	ldi	r24, 0x00	; 0
+ 330:	90 e0       	ldi	r25, 0x00	; 0
+ 332:	0b c0       	rjmp	.+22     	; 0x34a <usb_init+0x26>
+ 334:	ef e9       	ldi	r30, 0x9F	; 159
+ 336:	ff e0       	ldi	r31, 0x0F	; 15
+ 338:	31 97       	sbiw	r30, 0x01	; 1
+ 33a:	f1 f7       	brne	.-4      	; 0x338 <usb_init+0x14>
+ 33c:	00 c0       	rjmp	.+0      	; 0x33e <usb_init+0x1a>
+ 33e:	00 00       	nop
+ 340:	01 96       	adiw	r24, 0x01	; 1
+		_delay_ms(1);
+		timeoutCounter++;
+		if (timeoutCounter >= USB_TIMEOUT)
+ 342:	f3 e0       	ldi	r31, 0x03	; 3
+ 344:	88 3e       	cpi	r24, 0xE8	; 232
+ 346:	9f 07       	cpc	r25, r31
+ 348:	81 f0       	breq	.+32     	; 0x36a <usb_init+0x46>
+	HW_CONFIG();
+	USB_FREEZE();				// enable USB
+	PLL_CONFIG();				// config PLL
+	// wait a certain amount of time for PLL lock
+	unsigned long timeoutCounter = 0;
+	while (!(PLLCSR & (1<<PLOCK))){
+ 34a:	09 b4       	in	r0, 0x29	; 41
+ 34c:	00 fe       	sbrs	r0, 0
+ 34e:	f2 cf       	rjmp	.-28     	; 0x334 <usb_init+0x10>
+		_delay_ms(1);
+		timeoutCounter++;
+		if (timeoutCounter >= USB_TIMEOUT)
+			return 1;
+	}		
+	USB_CONFIG();				// start USB clock
+ 350:	80 e8       	ldi	r24, 0x80	; 128
+ 352:	80 93 d8 00 	sts	0x00D8, r24
+	UDCON = 0;				// enable attach resistor
+ 356:	10 92 e0 00 	sts	0x00E0, r1
+	usb_configuration = 0;
+ 35a:	10 92 02 01 	sts	0x0102, r1
+	UDIEN = (1<<EORSTE)|(1<<SOFE);
+ 35e:	8c e0       	ldi	r24, 0x0C	; 12
+ 360:	80 93 e2 00 	sts	0x00E2, r24
+	sei();
+ 364:	78 94       	sei
+	return 0;
+ 366:	80 e0       	ldi	r24, 0x00	; 0
+ 368:	08 95       	ret
+	unsigned long timeoutCounter = 0;
+	while (!(PLLCSR & (1<<PLOCK))){
+		_delay_ms(1);
+		timeoutCounter++;
+		if (timeoutCounter >= USB_TIMEOUT)
+			return 1;
+ 36a:	81 e0       	ldi	r24, 0x01	; 1
+	UDCON = 0;				// enable attach resistor
+	usb_configuration = 0;
+	UDIEN = (1<<EORSTE)|(1<<SOFE);
+	sei();
+	return 0;
+}
+ 36c:	08 95       	ret
+
+0000036e <usb_configured>:
+
+// return 0 if the USB is not configured, or the configuration
+// number selected by the HOST
+uint8_t usb_configured(void) {
+	return usb_configuration;
+ 36e:	80 91 02 01 	lds	r24, 0x0102
+}
+ 372:	08 95       	ret
+
+00000374 <usb_gamepad_reset_state>:
+
+gamepad_state_t gamepad_state;
+
+inline void usb_gamepad_reset_state(void) {
+	memcpy_P(&gamepad_state, &gamepad_idle_state, sizeof(gamepad_state_t));
+ 374:	84 e0       	ldi	r24, 0x04	; 4
+ 376:	91 e0       	ldi	r25, 0x01	; 1
+ 378:	68 e9       	ldi	r22, 0x98	; 152
+ 37a:	70 e0       	ldi	r23, 0x00	; 0
+ 37c:	43 e1       	ldi	r20, 0x13	; 19
+ 37e:	50 e0       	ldi	r21, 0x00	; 0
+ 380:	0e 94 61 05 	call	0xac2	; 0xac2 <memcpy_P>
+}
+ 384:	08 95       	ret
+
+00000386 <usb_gamepad_send>:
+}
+
+int8_t usb_gamepad_send(void) {
+	uint8_t intr_state, timeout, i;
+
+	if (!usb_configuration) return -1;
+ 386:	80 91 02 01 	lds	r24, 0x0102
+ 38a:	88 23       	and	r24, r24
+ 38c:	51 f1       	breq	.+84     	; 0x3e2 <usb_gamepad_send+0x5c>
+	intr_state = SREG;
+ 38e:	8f b7       	in	r24, 0x3f	; 63
+	cli();
+ 390:	f8 94       	cli
+	UENUM = GAMEPAD_ENDPOINT;
+ 392:	91 e0       	ldi	r25, 0x01	; 1
+ 394:	90 93 e9 00 	sts	0x00E9, r25
+	timeout = UDFNUML + 50;
+ 398:	90 91 e4 00 	lds	r25, 0x00E4
+ 39c:	9e 5c       	subi	r25, 0xCE	; 206
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+		// get ready to try checking again
+		intr_state = SREG;
+		cli();
+		UENUM = GAMEPAD_ENDPOINT;
+ 39e:	21 e0       	ldi	r18, 0x01	; 1
+	cli();
+	UENUM = GAMEPAD_ENDPOINT;
+	timeout = UDFNUML + 50;
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+ 3a0:	30 91 e8 00 	lds	r19, 0x00E8
+ 3a4:	35 ff       	sbrs	r19, 5
+ 3a6:	04 c0       	rjmp	.+8      	; 0x3b0 <usb_gamepad_send+0x2a>
+ 3a8:	e4 e0       	ldi	r30, 0x04	; 4
+ 3aa:	f1 e0       	ldi	r31, 0x01	; 1
+ 3ac:	93 e1       	ldi	r25, 0x13	; 19
+ 3ae:	0e c0       	rjmp	.+28     	; 0x3cc <usb_gamepad_send+0x46>
+		SREG = intr_state;
+ 3b0:	8f bf       	out	0x3f, r24	; 63
+		// has the USB gone offline?
+		if (!usb_configuration) return -1;
+ 3b2:	80 91 02 01 	lds	r24, 0x0102
+ 3b6:	88 23       	and	r24, r24
+ 3b8:	a1 f0       	breq	.+40     	; 0x3e2 <usb_gamepad_send+0x5c>
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+ 3ba:	80 91 e4 00 	lds	r24, 0x00E4
+ 3be:	89 17       	cp	r24, r25
+ 3c0:	91 f0       	breq	.+36     	; 0x3e6 <usb_gamepad_send+0x60>
+		// get ready to try checking again
+		intr_state = SREG;
+ 3c2:	8f b7       	in	r24, 0x3f	; 63
+		cli();
+ 3c4:	f8 94       	cli
+		UENUM = GAMEPAD_ENDPOINT;
+ 3c6:	20 93 e9 00 	sts	0x00E9, r18
+	}
+ 3ca:	ea cf       	rjmp	.-44     	; 0x3a0 <usb_gamepad_send+0x1a>
+
+	for (i=0; i<sizeof(gamepad_state_t); i++) {
+		UEDATX = ((uint8_t*)&gamepad_state)[i];
+ 3cc:	21 91       	ld	r18, Z+
+ 3ce:	20 93 f1 00 	sts	0x00F1, r18
+ 3d2:	91 50       	subi	r25, 0x01	; 1
+		intr_state = SREG;
+		cli();
+		UENUM = GAMEPAD_ENDPOINT;
+	}
+
+	for (i=0; i<sizeof(gamepad_state_t); i++) {
+ 3d4:	d9 f7       	brne	.-10     	; 0x3cc <usb_gamepad_send+0x46>
+		UEDATX = ((uint8_t*)&gamepad_state)[i];
+	}
+
+	UEINTX = 0x3A;
+ 3d6:	9a e3       	ldi	r25, 0x3A	; 58
+ 3d8:	90 93 e8 00 	sts	0x00E8, r25
+	SREG = intr_state;
+ 3dc:	8f bf       	out	0x3f, r24	; 63
+	return 0;
+ 3de:	80 e0       	ldi	r24, 0x00	; 0
+ 3e0:	08 95       	ret
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+		SREG = intr_state;
+		// has the USB gone offline?
+		if (!usb_configuration) return -1;
+ 3e2:	8f ef       	ldi	r24, 0xFF	; 255
+ 3e4:	08 95       	ret
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+ 3e6:	8f ef       	ldi	r24, 0xFF	; 255
+	}
+
+	UEINTX = 0x3A;
+	SREG = intr_state;
+	return 0;
+}
+ 3e8:	08 95       	ret
+
+000003ea <sendPS3Data>:
+
+// sendPS3Data takes in a PhysicalButtonList data struct,
+//  maps the data to the format for our gamepad packet,
+//  sends that data out via USB,  and outputs
+//  a return code (zero if no problems, one if problems
+int8_t sendPS3Data(dataForController_t btnList){
+ 3ea:	cf 93       	push	r28
+ 3ec:	df 93       	push	r29
+ 3ee:	cd b7       	in	r28, 0x3d	; 61
+ 3f0:	de b7       	in	r29, 0x3e	; 62
+ 3f2:	27 97       	sbiw	r28, 0x07	; 7
+ 3f4:	0f b6       	in	r0, 0x3f	; 63
+ 3f6:	f8 94       	cli
+ 3f8:	de bf       	out	0x3e, r29	; 62
+ 3fa:	0f be       	out	0x3f, r0	; 63
+ 3fc:	cd bf       	out	0x3d, r28	; 61
+ 3fe:	92 2f       	mov	r25, r18
+ 400:	29 83       	std	Y+1, r18	; 0x01
+ 402:	23 2f       	mov	r18, r19
+ 404:	3a 83       	std	Y+2, r19	; 0x02
+ 406:	4b 83       	std	Y+3, r20	; 0x03
+ 408:	5c 83       	std	Y+4, r21	; 0x04
+ 40a:	6d 83       	std	Y+5, r22	; 0x05
+ 40c:	7e 83       	std	Y+6, r23	; 0x06
+ 40e:	8f 83       	std	Y+7, r24	; 0x07
+	
+	gamepad_state.triangle_btn = btnList.triangleOn;//Button 4
+ 410:	49 2f       	mov	r20, r25
+ 412:	41 70       	andi	r20, 0x01	; 1
+ 414:	44 0f       	add	r20, r20
+ 416:	44 0f       	add	r20, r20
+ 418:	44 0f       	add	r20, r20
+ 41a:	80 91 04 01 	lds	r24, 0x0104
+ 41e:	86 7f       	andi	r24, 0xF6	; 246
+	gamepad_state.square_btn = btnList.squareOn;	
+ 420:	39 2f       	mov	r19, r25
+ 422:	36 95       	lsr	r19
+ 424:	36 95       	lsr	r19
+ 426:	31 70       	andi	r19, 0x01	; 1
+ 428:	84 2b       	or	r24, r20
+ 42a:	83 2b       	or	r24, r19
+	gamepad_state.cross_btn = btnList.crossOn;
+ 42c:	49 2f       	mov	r20, r25
+ 42e:	46 95       	lsr	r20
+ 430:	46 95       	lsr	r20
+ 432:	42 70       	andi	r20, 0x02	; 2
+ 434:	89 7f       	andi	r24, 0xF9	; 249
+	gamepad_state.circle_btn = btnList.circleOn;
+ 436:	39 2f       	mov	r19, r25
+ 438:	33 0f       	add	r19, r19
+ 43a:	34 70       	andi	r19, 0x04	; 4
+ 43c:	84 2b       	or	r24, r20
+ 43e:	83 2b       	or	r24, r19
+
+	gamepad_state.l1_btn = btnList.l1On;
+ 440:	49 2f       	mov	r20, r25
+ 442:	40 71       	andi	r20, 0x10	; 16
+ 444:	8f 7c       	andi	r24, 0xCF	; 207
+	gamepad_state.r1_btn = btnList.r1On;
+ 446:	39 2f       	mov	r19, r25
+ 448:	33 1f       	adc	r19, r19
+ 44a:	33 27       	eor	r19, r19
+ 44c:	33 1f       	adc	r19, r19
+ 44e:	32 95       	swap	r19
+ 450:	33 0f       	add	r19, r19
+ 452:	30 7e       	andi	r19, 0xE0	; 224
+ 454:	84 2b       	or	r24, r20
+ 456:	83 2b       	or	r24, r19
+	gamepad_state.l2_btn = btnList.l2On;
+ 458:	99 0f       	add	r25, r25
+ 45a:	90 74       	andi	r25, 0x40	; 64
+ 45c:	8f 73       	andi	r24, 0x3F	; 63
+	gamepad_state.r2_btn = btnList.r2On;
+ 45e:	27 95       	ror	r18
+ 460:	22 27       	eor	r18, r18
+ 462:	27 95       	ror	r18
+ 464:	89 2b       	or	r24, r25
+ 466:	82 2b       	or	r24, r18
+ 468:	80 93 04 01 	sts	0x0104, r24
+		
+	
+	if (gamepad_state.triangle_btn == 1)
+ 46c:	83 ff       	sbrs	r24, 3
+ 46e:	04 c0       	rjmp	.+8      	; 0x478 <sendPS3Data+0x8e>
+		gamepad_state.triangle_axis = 0xFF;
+ 470:	9f ef       	ldi	r25, 0xFF	; 255
+ 472:	90 93 0f 01 	sts	0x010F, r25
+ 476:	02 c0       	rjmp	.+4      	; 0x47c <sendPS3Data+0x92>
+	else
+		gamepad_state.triangle_axis = 0;
+ 478:	10 92 0f 01 	sts	0x010F, r1
+		
+	if (gamepad_state.square_btn == 1)
+ 47c:	80 ff       	sbrs	r24, 0
+ 47e:	04 c0       	rjmp	.+8      	; 0x488 <sendPS3Data+0x9e>
+		gamepad_state.square_axis = 0xFF;
+ 480:	9f ef       	ldi	r25, 0xFF	; 255
+ 482:	90 93 12 01 	sts	0x0112, r25
+ 486:	02 c0       	rjmp	.+4      	; 0x48c <sendPS3Data+0xa2>
+	else
+		gamepad_state.square_axis = 0;
+ 488:	10 92 12 01 	sts	0x0112, r1
+
+	if (gamepad_state.cross_btn == 1)
+ 48c:	81 ff       	sbrs	r24, 1
+ 48e:	04 c0       	rjmp	.+8      	; 0x498 <sendPS3Data+0xae>
+		gamepad_state.cross_axis = 0xFF;
+ 490:	9f ef       	ldi	r25, 0xFF	; 255
+ 492:	90 93 11 01 	sts	0x0111, r25
+ 496:	02 c0       	rjmp	.+4      	; 0x49c <sendPS3Data+0xb2>
+	else
+		gamepad_state.cross_axis = 0;
+ 498:	10 92 11 01 	sts	0x0111, r1
+
+	if (gamepad_state.circle_btn == 1)
+ 49c:	82 ff       	sbrs	r24, 2
+ 49e:	04 c0       	rjmp	.+8      	; 0x4a8 <sendPS3Data+0xbe>
+		gamepad_state.circle_axis = 0xFF;
+ 4a0:	9f ef       	ldi	r25, 0xFF	; 255
+ 4a2:	90 93 10 01 	sts	0x0110, r25
+ 4a6:	02 c0       	rjmp	.+4      	; 0x4ac <sendPS3Data+0xc2>
+	else
+		gamepad_state.circle_axis = 0;
+ 4a8:	10 92 10 01 	sts	0x0110, r1
+
+	if (gamepad_state.l1_btn == 1)
+ 4ac:	84 ff       	sbrs	r24, 4
+ 4ae:	04 c0       	rjmp	.+8      	; 0x4b8 <sendPS3Data+0xce>
+		gamepad_state.l1_axis = 0xFF;
+ 4b0:	9f ef       	ldi	r25, 0xFF	; 255
+ 4b2:	90 93 13 01 	sts	0x0113, r25
+ 4b6:	02 c0       	rjmp	.+4      	; 0x4bc <sendPS3Data+0xd2>
+	else
+		gamepad_state.l1_axis = 0;
+ 4b8:	10 92 13 01 	sts	0x0113, r1
+		
+	if (gamepad_state.l2_btn == 1)
+ 4bc:	86 ff       	sbrs	r24, 6
+ 4be:	04 c0       	rjmp	.+8      	; 0x4c8 <sendPS3Data+0xde>
+		gamepad_state.l2_axis = 0xFF;
+ 4c0:	9f ef       	ldi	r25, 0xFF	; 255
+ 4c2:	90 93 15 01 	sts	0x0115, r25
+ 4c6:	02 c0       	rjmp	.+4      	; 0x4cc <sendPS3Data+0xe2>
+	else
+		gamepad_state.l2_axis = 0;
+ 4c8:	10 92 15 01 	sts	0x0115, r1
+		
+	if (gamepad_state.r1_btn == 1)
+ 4cc:	85 ff       	sbrs	r24, 5
+ 4ce:	04 c0       	rjmp	.+8      	; 0x4d8 <sendPS3Data+0xee>
+		gamepad_state.r1_axis = 0xFF;
+ 4d0:	9f ef       	ldi	r25, 0xFF	; 255
+ 4d2:	90 93 14 01 	sts	0x0114, r25
+ 4d6:	02 c0       	rjmp	.+4      	; 0x4dc <sendPS3Data+0xf2>
+	else
+		gamepad_state.r1_axis = 0;
+ 4d8:	10 92 14 01 	sts	0x0114, r1
+			
+	if (gamepad_state.r2_btn == 1)
+ 4dc:	87 ff       	sbrs	r24, 7
+ 4de:	04 c0       	rjmp	.+8      	; 0x4e8 <sendPS3Data+0xfe>
+		gamepad_state.r2_axis = 0xFF;
+ 4e0:	8f ef       	ldi	r24, 0xFF	; 255
+ 4e2:	80 93 16 01 	sts	0x0116, r24
+ 4e6:	02 c0       	rjmp	.+4      	; 0x4ec <sendPS3Data+0x102>
+	else
+		gamepad_state.r2_axis = 0;
+ 4e8:	10 92 16 01 	sts	0x0116, r1
+		
+	gamepad_state.select_btn = btnList.selectOn;
+ 4ec:	9a 81       	ldd	r25, Y+2	; 0x02
+ 4ee:	39 2f       	mov	r19, r25
+ 4f0:	36 95       	lsr	r19
+ 4f2:	36 95       	lsr	r19
+ 4f4:	31 70       	andi	r19, 0x01	; 1
+ 4f6:	80 91 05 01 	lds	r24, 0x0105
+ 4fa:	8c 7f       	andi	r24, 0xFC	; 252
+	gamepad_state.start_btn = btnList.startOn;
+ 4fc:	29 2f       	mov	r18, r25
+ 4fe:	26 95       	lsr	r18
+ 500:	26 95       	lsr	r18
+ 502:	22 70       	andi	r18, 0x02	; 2
+ 504:	83 2b       	or	r24, r19
+ 506:	82 2b       	or	r24, r18
+	gamepad_state.l3_btn = btnList.l3On;
+ 508:	29 81       	ldd	r18, Y+1	; 0x01
+ 50a:	22 95       	swap	r18
+ 50c:	24 70       	andi	r18, 0x04	; 4
+ 50e:	83 7f       	andi	r24, 0xF3	; 243
+	gamepad_state.r3_btn = btnList.r3On;
+ 510:	39 2f       	mov	r19, r25
+ 512:	33 0f       	add	r19, r19
+ 514:	33 0f       	add	r19, r19
+ 516:	38 70       	andi	r19, 0x08	; 8
+ 518:	82 2b       	or	r24, r18
+ 51a:	83 2b       	or	r24, r19
+	
+	//gamepad_state.r2_btn_alt = btnList.r2On;
+	//gamepad_state.l2_btn_alt = btnList.l2On;
+	gamepad_state.ps_btn = btnList.homeOn;
+ 51c:	29 2f       	mov	r18, r25
+ 51e:	20 71       	andi	r18, 0x10	; 16
+ 520:	8f 7e       	andi	r24, 0xEF	; 239
+ 522:	82 2b       	or	r24, r18
+ 524:	80 93 05 01 	sts	0x0105, r24
+
+	// digital direction, use the dir_* constants(enum)
+	// 8 = center, 0 = up, 1 = up/right, 2 = right, 3 = right/down
+	// 4 = down, 5 = down/left, 6 = left, 7 = left/up
+
+	gamepad_state.direction = 8;
+ 528:	88 e0       	ldi	r24, 0x08	; 8
+ 52a:	80 93 06 01 	sts	0x0106, r24
+	if (btnList.dpadUpOn == 1){
+ 52e:	96 ff       	sbrs	r25, 6
+ 530:	0d c0       	rjmp	.+26     	; 0x54c <sendPS3Data+0x162>
+		if (btnList.dpadLeftOn == 1){
+ 532:	95 ff       	sbrs	r25, 5
+ 534:	02 c0       	rjmp	.+4      	; 0x53a <sendPS3Data+0x150>
+			gamepad_state.direction = 7;
+ 536:	87 e0       	ldi	r24, 0x07	; 7
+ 538:	03 c0       	rjmp	.+6      	; 0x540 <sendPS3Data+0x156>
+		} 
+		else if (btnList.dpadRightOn == 1){
+ 53a:	97 ff       	sbrs	r25, 7
+ 53c:	04 c0       	rjmp	.+8      	; 0x546 <sendPS3Data+0x15c>
+			gamepad_state.direction = 1;
+ 53e:	81 e0       	ldi	r24, 0x01	; 1
+ 540:	80 93 06 01 	sts	0x0106, r24
+ 544:	1c c0       	rjmp	.+56     	; 0x57e <sendPS3Data+0x194>
+		}
+		else
+			gamepad_state.direction = 0;
+ 546:	10 92 06 01 	sts	0x0106, r1
+ 54a:	19 c0       	rjmp	.+50     	; 0x57e <sendPS3Data+0x194>
+		
+	}
+	else if (btnList.dpadDownOn == 1){
+ 54c:	2b 81       	ldd	r18, Y+3	; 0x03
+ 54e:	89 2f       	mov	r24, r25
+ 550:	80 72       	andi	r24, 0x20	; 32
+ 552:	20 ff       	sbrs	r18, 0
+ 554:	0a c0       	rjmp	.+20     	; 0x56a <sendPS3Data+0x180>
+				if (btnList.dpadLeftOn == 1){
+ 556:	88 23       	and	r24, r24
+ 558:	11 f0       	breq	.+4      	; 0x55e <sendPS3Data+0x174>
+			gamepad_state.direction = 5;
+ 55a:	85 e0       	ldi	r24, 0x05	; 5
+ 55c:	09 c0       	rjmp	.+18     	; 0x570 <sendPS3Data+0x186>
+		} 
+		else if (btnList.dpadRightOn == 1){
+ 55e:	97 ff       	sbrs	r25, 7
+ 560:	02 c0       	rjmp	.+4      	; 0x566 <sendPS3Data+0x17c>
+			gamepad_state.direction = 3;
+ 562:	83 e0       	ldi	r24, 0x03	; 3
+ 564:	05 c0       	rjmp	.+10     	; 0x570 <sendPS3Data+0x186>
+		}
+		else
+			gamepad_state.direction = 4;		
+ 566:	84 e0       	ldi	r24, 0x04	; 4
+ 568:	03 c0       	rjmp	.+6      	; 0x570 <sendPS3Data+0x186>
+	}
+	else if (btnList.dpadLeftOn == 1){
+ 56a:	88 23       	and	r24, r24
+ 56c:	21 f0       	breq	.+8      	; 0x576 <sendPS3Data+0x18c>
+		gamepad_state.direction = 6;
+ 56e:	86 e0       	ldi	r24, 0x06	; 6
+ 570:	80 93 06 01 	sts	0x0106, r24
+ 574:	50 c0       	rjmp	.+160    	; 0x616 <sendPS3Data+0x22c>
+	}
+	else if (btnList.dpadRightOn == 1){
+ 576:	97 ff       	sbrs	r25, 7
+ 578:	4e c0       	rjmp	.+156    	; 0x616 <sendPS3Data+0x22c>
+		gamepad_state.direction = 2;
+ 57a:	82 e0       	ldi	r24, 0x02	; 2
+ 57c:	f9 cf       	rjmp	.-14     	; 0x570 <sendPS3Data+0x186>
+	}
+	
+	// Take care of the d-pad analog pressures separately,
+	//  since the 'convert to hat switch' code is confusing
+	if (btnList.dpadUpOn == 1)
+		gamepad_state.up_axis = 0xFF;	
+ 57e:	8f ef       	ldi	r24, 0xFF	; 255
+ 580:	80 93 0b 01 	sts	0x010B, r24
+	else
+		gamepad_state.up_axis = 0;
+	if (btnList.dpadRightOn == 1)
+ 584:	97 ff       	sbrs	r25, 7
+ 586:	04 c0       	rjmp	.+8      	; 0x590 <sendPS3Data+0x1a6>
+		gamepad_state.right_axis = 0xFF;
+ 588:	8f ef       	ldi	r24, 0xFF	; 255
+ 58a:	80 93 0c 01 	sts	0x010C, r24
+ 58e:	02 c0       	rjmp	.+4      	; 0x594 <sendPS3Data+0x1aa>
+	else
+		gamepad_state.right_axis = 0;
+ 590:	10 92 0c 01 	sts	0x010C, r1
+	if (btnList.dpadDownOn == 1)
+ 594:	8b 81       	ldd	r24, Y+3	; 0x03
+ 596:	80 ff       	sbrs	r24, 0
+ 598:	04 c0       	rjmp	.+8      	; 0x5a2 <sendPS3Data+0x1b8>
+		gamepad_state.down_axis = 0xFF;
+ 59a:	8f ef       	ldi	r24, 0xFF	; 255
+ 59c:	80 93 0d 01 	sts	0x010D, r24
+ 5a0:	02 c0       	rjmp	.+4      	; 0x5a6 <sendPS3Data+0x1bc>
+	else
+		gamepad_state.down_axis = 0;
+ 5a2:	10 92 0d 01 	sts	0x010D, r1
+	if (btnList.dpadLeftOn == 1)
+ 5a6:	95 ff       	sbrs	r25, 5
+ 5a8:	04 c0       	rjmp	.+8      	; 0x5b2 <sendPS3Data+0x1c8>
+		gamepad_state.left_axis = 0xFF;
+ 5aa:	8f ef       	ldi	r24, 0xFF	; 255
+ 5ac:	80 93 0e 01 	sts	0x010E, r24
+ 5b0:	02 c0       	rjmp	.+4      	; 0x5b6 <sendPS3Data+0x1cc>
+	else
+		gamepad_state.left_axis = 0;
+ 5b2:	10 92 0e 01 	sts	0x010E, r1
+			
+
+	// left and right analog sticks, 0x00 left/up, 0x80 middle, 0xff right/down
+
+	gamepad_state.l_x_axis = btnList.leftStickX;
+ 5b6:	9b 81       	ldd	r25, Y+3	; 0x03
+ 5b8:	96 95       	lsr	r25
+ 5ba:	2c 81       	ldd	r18, Y+4	; 0x04
+ 5bc:	82 2f       	mov	r24, r18
+ 5be:	87 95       	ror	r24
+ 5c0:	88 27       	eor	r24, r24
+ 5c2:	87 95       	ror	r24
+ 5c4:	89 2b       	or	r24, r25
+ 5c6:	80 93 07 01 	sts	0x0107, r24
+	gamepad_state.l_y_axis = btnList.leftStickY;
+ 5ca:	26 95       	lsr	r18
+ 5cc:	9d 81       	ldd	r25, Y+5	; 0x05
+ 5ce:	89 2f       	mov	r24, r25
+ 5d0:	87 95       	ror	r24
+ 5d2:	88 27       	eor	r24, r24
+ 5d4:	87 95       	ror	r24
+ 5d6:	82 2b       	or	r24, r18
+ 5d8:	80 93 08 01 	sts	0x0108, r24
+	gamepad_state.r_x_axis = btnList.rightStickX;
+ 5dc:	29 2f       	mov	r18, r25
+ 5de:	26 95       	lsr	r18
+ 5e0:	9e 81       	ldd	r25, Y+6	; 0x06
+ 5e2:	89 2f       	mov	r24, r25
+ 5e4:	87 95       	ror	r24
+ 5e6:	88 27       	eor	r24, r24
+ 5e8:	87 95       	ror	r24
+ 5ea:	82 2b       	or	r24, r18
+ 5ec:	80 93 09 01 	sts	0x0109, r24
+	gamepad_state.r_y_axis = btnList.rightStickY;
+ 5f0:	96 95       	lsr	r25
+ 5f2:	8f 81       	ldd	r24, Y+7	; 0x07
+ 5f4:	87 95       	ror	r24
+ 5f6:	88 27       	eor	r24, r24
+ 5f8:	87 95       	ror	r24
+ 5fa:	89 2b       	or	r24, r25
+ 5fc:	80 93 0a 01 	sts	0x010A, r24
+	
+	// Send the data out via USB
+	return usb_gamepad_send();
+ 600:	0e 94 c3 01 	call	0x386	; 0x386 <usb_gamepad_send>
+}
+ 604:	27 96       	adiw	r28, 0x07	; 7
+ 606:	0f b6       	in	r0, 0x3f	; 63
+ 608:	f8 94       	cli
+ 60a:	de bf       	out	0x3e, r29	; 62
+ 60c:	0f be       	out	0x3f, r0	; 63
+ 60e:	cd bf       	out	0x3d, r28	; 61
+ 610:	df 91       	pop	r29
+ 612:	cf 91       	pop	r28
+ 614:	08 95       	ret
+	// Take care of the d-pad analog pressures separately,
+	//  since the 'convert to hat switch' code is confusing
+	if (btnList.dpadUpOn == 1)
+		gamepad_state.up_axis = 0xFF;	
+	else
+		gamepad_state.up_axis = 0;
+ 616:	10 92 0b 01 	sts	0x010B, r1
+ 61a:	b4 cf       	rjmp	.-152    	; 0x584 <sendPS3Data+0x19a>
+
+0000061c <__vector_11>:
+ *  Private Functions - not intended for general user consumption....
+ *
+ **************************************************************************/
+
+ISR(USB_GEN_vect)
+{
+ 61c:	1f 92       	push	r1
+ 61e:	0f 92       	push	r0
+ 620:	0f b6       	in	r0, 0x3f	; 63
+ 622:	0f 92       	push	r0
+ 624:	11 24       	eor	r1, r1
+ 626:	8f 93       	push	r24
+	uint8_t intbits;
+
+	intbits = UDINT;
+ 628:	80 91 e1 00 	lds	r24, 0x00E1
+	UDINT = 0;
+ 62c:	10 92 e1 00 	sts	0x00E1, r1
+	if (intbits & (1<<EORSTI)) {
+ 630:	83 ff       	sbrs	r24, 3
+ 632:	0f c0       	rjmp	.+30     	; 0x652 <__vector_11+0x36>
+		UENUM = 0;
+ 634:	10 92 e9 00 	sts	0x00E9, r1
+		UECONX = 1;
+ 638:	81 e0       	ldi	r24, 0x01	; 1
+ 63a:	80 93 eb 00 	sts	0x00EB, r24
+		UECFG0X = EP_TYPE_CONTROL;
+ 63e:	10 92 ec 00 	sts	0x00EC, r1
+		UECFG1X = EP_SIZE(ENDPOINT0_SIZE) | EP_SINGLE_BUFFER;
+ 642:	82 e3       	ldi	r24, 0x32	; 50
+ 644:	80 93 ed 00 	sts	0x00ED, r24
+		UEIENX = (1<<RXSTPE);
+ 648:	88 e0       	ldi	r24, 0x08	; 8
+ 64a:	80 93 f0 00 	sts	0x00F0, r24
+		usb_configuration = 0;
+ 64e:	10 92 02 01 	sts	0x0102, r1
+	}
+}
+ 652:	8f 91       	pop	r24
+ 654:	0f 90       	pop	r0
+ 656:	0f be       	out	0x3f, r0	; 63
+ 658:	0f 90       	pop	r0
+ 65a:	1f 90       	pop	r1
+ 65c:	18 95       	reti
+
+0000065e <__vector_12>:
+// USB Endpoint Interrupt - endpoint 0 is handled here.  The
+// other endpoints are manipulated by the user-callable
+// functions, and the start-of-frame interrupt.
+//
+ISR(USB_COM_vect)
+{
+ 65e:	1f 92       	push	r1
+ 660:	0f 92       	push	r0
+ 662:	0f b6       	in	r0, 0x3f	; 63
+ 664:	0f 92       	push	r0
+ 666:	11 24       	eor	r1, r1
+ 668:	1f 93       	push	r17
+ 66a:	2f 93       	push	r18
+ 66c:	3f 93       	push	r19
+ 66e:	4f 93       	push	r20
+ 670:	5f 93       	push	r21
+ 672:	6f 93       	push	r22
+ 674:	7f 93       	push	r23
+ 676:	8f 93       	push	r24
+ 678:	9f 93       	push	r25
+ 67a:	af 93       	push	r26
+ 67c:	bf 93       	push	r27
+ 67e:	cf 93       	push	r28
+ 680:	df 93       	push	r29
+ 682:	ef 93       	push	r30
+ 684:	ff 93       	push	r31
+	uint16_t wLength;
+	uint16_t desc_val;
+	const uint8_t *desc_addr;
+	uint8_t	desc_length;
+
+	UENUM = 0;
+ 686:	10 92 e9 00 	sts	0x00E9, r1
+	intbits = UEINTX;
+ 68a:	80 91 e8 00 	lds	r24, 0x00E8
+	if (intbits & (1<<RXSTPI)) {
+ 68e:	83 ff       	sbrs	r24, 3
+ 690:	fd c0       	rjmp	.+506    	; 0x88c <__vector_12+0x22e>
+		bmRequestType = UEDATX;
+ 692:	30 91 f1 00 	lds	r19, 0x00F1
+		bRequest = UEDATX;
+ 696:	20 91 f1 00 	lds	r18, 0x00F1
+		wValue = UEDATX;
+ 69a:	c0 91 f1 00 	lds	r28, 0x00F1
+ 69e:	d0 e0       	ldi	r29, 0x00	; 0
+		wValue |= (UEDATX << 8);
+ 6a0:	40 91 f1 00 	lds	r20, 0x00F1
+ 6a4:	94 2f       	mov	r25, r20
+ 6a6:	80 e0       	ldi	r24, 0x00	; 0
+ 6a8:	c8 2b       	or	r28, r24
+ 6aa:	d9 2b       	or	r29, r25
+		wIndex = UEDATX;
+ 6ac:	60 91 f1 00 	lds	r22, 0x00F1
+ 6b0:	70 e0       	ldi	r23, 0x00	; 0
+		wIndex |= (UEDATX << 8);
+ 6b2:	40 91 f1 00 	lds	r20, 0x00F1
+ 6b6:	94 2f       	mov	r25, r20
+ 6b8:	80 e0       	ldi	r24, 0x00	; 0
+ 6ba:	68 2b       	or	r22, r24
+ 6bc:	79 2b       	or	r23, r25
+		wLength = UEDATX;
+ 6be:	a0 91 f1 00 	lds	r26, 0x00F1
+		wLength |= (UEDATX << 8);
+ 6c2:	10 91 f1 00 	lds	r17, 0x00F1
+		UEINTX = ~((1<<RXSTPI) | (1<<RXOUTI) | (1<<TXINI));
+ 6c6:	82 ef       	ldi	r24, 0xF2	; 242
+ 6c8:	80 93 e8 00 	sts	0x00E8, r24
+		if (bRequest == GET_DESCRIPTOR) {
+ 6cc:	26 30       	cpi	r18, 0x06	; 6
+ 6ce:	09 f0       	breq	.+2      	; 0x6d2 <__vector_12+0x74>
+ 6d0:	51 c0       	rjmp	.+162    	; 0x774 <__vector_12+0x116>
+ 6d2:	47 e0       	ldi	r20, 0x07	; 7
+ 6d4:	2b ea       	ldi	r18, 0xAB	; 171
+ 6d6:	30 e0       	ldi	r19, 0x00	; 0
+			for (i=0; ; i++) {
+				if (i >= NUM_DESC_LIST) {
+					UECONX = (1<<STALLRQ)|(1<<EPEN);  //stall
+					return;
+				}
+				desc_val = pgm_read_word(list);
+ 6d8:	f9 01       	movw	r30, r18
+ 6da:	85 91       	lpm	r24, Z+
+ 6dc:	94 91       	lpm	r25, Z
+				if (desc_val != wValue) {
+ 6de:	8c 17       	cp	r24, r28
+ 6e0:	9d 07       	cpc	r25, r29
+ 6e2:	39 f4       	brne	.+14     	; 0x6f2 <__vector_12+0x94>
+					list += sizeof(struct descriptor_list_struct);
+					continue;
+				}
+				list += 2;
+ 6e4:	f9 01       	movw	r30, r18
+ 6e6:	32 96       	adiw	r30, 0x02	; 2
+				desc_val = pgm_read_word(list);
+ 6e8:	85 91       	lpm	r24, Z+
+ 6ea:	94 91       	lpm	r25, Z
+				if (desc_val != wIndex) {
+ 6ec:	86 17       	cp	r24, r22
+ 6ee:	97 07       	cpc	r25, r23
+ 6f0:	29 f0       	breq	.+10     	; 0x6fc <__vector_12+0x9e>
+					list += sizeof(struct descriptor_list_struct)-2;
+ 6f2:	29 5f       	subi	r18, 0xF9	; 249
+ 6f4:	3f 4f       	sbci	r19, 0xFF	; 255
+				desc_addr = (const uint8_t *)pgm_read_word(list);
+				list += 2;
+				desc_length = pgm_read_byte(list);
+				break;
+			}
+			len = (wLength < 256) ? wLength : 255;
+ 6f6:	41 50       	subi	r20, 0x01	; 1
+		wLength |= (UEDATX << 8);
+		UEINTX = ~((1<<RXSTPI) | (1<<RXOUTI) | (1<<TXINI));
+		if (bRequest == GET_DESCRIPTOR) {
+			list = (const uint8_t *)descriptor_list;
+			for (i=0; ; i++) {
+				if (i >= NUM_DESC_LIST) {
+ 6f8:	79 f7       	brne	.-34     	; 0x6d8 <__vector_12+0x7a>
+ 6fa:	c8 c0       	rjmp	.+400    	; 0x88c <__vector_12+0x22e>
+				desc_val = pgm_read_word(list);
+				if (desc_val != wIndex) {
+					list += sizeof(struct descriptor_list_struct)-2;
+					continue;
+				}
+				list += 2;
+ 6fc:	f9 01       	movw	r30, r18
+ 6fe:	34 96       	adiw	r30, 0x04	; 4
+				desc_addr = (const uint8_t *)pgm_read_word(list);
+ 700:	85 91       	lpm	r24, Z+
+ 702:	94 91       	lpm	r25, Z
+ 704:	ac 01       	movw	r20, r24
+				list += 2;
+ 706:	2a 5f       	subi	r18, 0xFA	; 250
+ 708:	3f 4f       	sbci	r19, 0xFF	; 255
+				desc_length = pgm_read_byte(list);
+ 70a:	f9 01       	movw	r30, r18
+ 70c:	24 91       	lpm	r18, Z
+		bRequest = UEDATX;
+		wValue = UEDATX;
+		wValue |= (UEDATX << 8);
+		wIndex = UEDATX;
+		wIndex |= (UEDATX << 8);
+		wLength = UEDATX;
+ 70e:	b0 e0       	ldi	r27, 0x00	; 0
+		wLength |= (UEDATX << 8);
+ 710:	91 2f       	mov	r25, r17
+ 712:	80 e0       	ldi	r24, 0x00	; 0
+ 714:	a8 2b       	or	r26, r24
+ 716:	b9 2b       	or	r27, r25
+				desc_addr = (const uint8_t *)pgm_read_word(list);
+				list += 2;
+				desc_length = pgm_read_byte(list);
+				break;
+			}
+			len = (wLength < 256) ? wLength : 255;
+ 718:	af 3f       	cpi	r26, 0xFF	; 255
+ 71a:	b1 05       	cpc	r27, r1
+ 71c:	19 f0       	breq	.+6      	; 0x724 <__vector_12+0xc6>
+ 71e:	10 f0       	brcs	.+4      	; 0x724 <__vector_12+0xc6>
+ 720:	af ef       	ldi	r26, 0xFF	; 255
+ 722:	b0 e0       	ldi	r27, 0x00	; 0
+ 724:	a2 17       	cp	r26, r18
+ 726:	08 f4       	brcc	.+2      	; 0x72a <__vector_12+0xcc>
+ 728:	2a 2f       	mov	r18, r26
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 72a:	ae ef       	ldi	r26, 0xFE	; 254
+			len = (wLength < 256) ? wLength : 255;
+			if (len > desc_length) len = desc_length;
+			do {
+				// wait for host ready for IN packet
+				do {
+					i = UEINTX;
+ 72c:	80 91 e8 00 	lds	r24, 0x00E8
+				} while (!(i & ((1<<TXINI)|(1<<RXOUTI))));
+ 730:	90 e0       	ldi	r25, 0x00	; 0
+ 732:	bc 01       	movw	r22, r24
+ 734:	65 70       	andi	r22, 0x05	; 5
+ 736:	70 70       	andi	r23, 0x00	; 0
+ 738:	61 15       	cp	r22, r1
+ 73a:	71 05       	cpc	r23, r1
+ 73c:	b9 f3       	breq	.-18     	; 0x72c <__vector_12+0xce>
+				if (i & (1<<RXOUTI)) return;	// abort
+ 73e:	82 fd       	sbrc	r24, 2
+ 740:	a8 c0       	rjmp	.+336    	; 0x892 <__vector_12+0x234>
+				// send IN packet
+				n = len < ENDPOINT0_SIZE ? len : ENDPOINT0_SIZE;
+ 742:	32 2f       	mov	r19, r18
+ 744:	21 34       	cpi	r18, 0x41	; 65
+ 746:	08 f0       	brcs	.+2      	; 0x74a <__vector_12+0xec>
+ 748:	30 e4       	ldi	r19, 0x40	; 64
+				for (i = n; i; i--) {
+ 74a:	ca 01       	movw	r24, r20
+ 74c:	63 2f       	mov	r22, r19
+ 74e:	06 c0       	rjmp	.+12     	; 0x75c <__vector_12+0xfe>
+					UEDATX = pgm_read_byte(desc_addr++);
+ 750:	fc 01       	movw	r30, r24
+ 752:	01 96       	adiw	r24, 0x01	; 1
+ 754:	e4 91       	lpm	r30, Z
+ 756:	e0 93 f1 00 	sts	0x00F1, r30
+					i = UEINTX;
+				} while (!(i & ((1<<TXINI)|(1<<RXOUTI))));
+				if (i & (1<<RXOUTI)) return;	// abort
+				// send IN packet
+				n = len < ENDPOINT0_SIZE ? len : ENDPOINT0_SIZE;
+				for (i = n; i; i--) {
+ 75a:	61 50       	subi	r22, 0x01	; 1
+ 75c:	66 23       	and	r22, r22
+ 75e:	c1 f7       	brne	.-16     	; 0x750 <__vector_12+0xf2>
+ 760:	43 0f       	add	r20, r19
+ 762:	51 1d       	adc	r21, r1
+					UEDATX = pgm_read_byte(desc_addr++);
+				}
+				len -= n;
+ 764:	23 1b       	sub	r18, r19
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 766:	a0 93 e8 00 	sts	0x00E8, r26
+				for (i = n; i; i--) {
+					UEDATX = pgm_read_byte(desc_addr++);
+				}
+				len -= n;
+				usb_send_in();
+			} while (len || n == ENDPOINT0_SIZE);
+ 76a:	22 23       	and	r18, r18
+ 76c:	f9 f6       	brne	.-66     	; 0x72c <__vector_12+0xce>
+ 76e:	30 34       	cpi	r19, 0x40	; 64
+ 770:	e9 f2       	breq	.-70     	; 0x72c <__vector_12+0xce>
+ 772:	8f c0       	rjmp	.+286    	; 0x892 <__vector_12+0x234>
+			return;
+		}
+		if (bRequest == SET_ADDRESS) {
+ 774:	25 30       	cpi	r18, 0x05	; 5
+ 776:	49 f4       	brne	.+18     	; 0x78a <__vector_12+0x12c>
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 778:	8e ef       	ldi	r24, 0xFE	; 254
+ 77a:	80 93 e8 00 	sts	0x00E8, r24
+			} while (len || n == ENDPOINT0_SIZE);
+			return;
+		}
+		if (bRequest == SET_ADDRESS) {
+			usb_send_in();
+			usb_wait_in_ready();
+ 77e:	0e 94 8d 01 	call	0x31a	; 0x31a <usb_wait_in_ready>
+			UDADDR = wValue | (1<<ADDEN);
+ 782:	c0 68       	ori	r28, 0x80	; 128
+ 784:	c0 93 e3 00 	sts	0x00E3, r28
+			return;
+ 788:	84 c0       	rjmp	.+264    	; 0x892 <__vector_12+0x234>
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+ 78a:	29 30       	cpi	r18, 0x09	; 9
+ 78c:	69 f5       	brne	.+90     	; 0x7e8 <__vector_12+0x18a>
+ 78e:	33 23       	and	r19, r19
+ 790:	09 f0       	breq	.+2      	; 0x794 <__vector_12+0x136>
+ 792:	3c c0       	rjmp	.+120    	; 0x80c <__vector_12+0x1ae>
+			usb_configuration = wValue;
+ 794:	c0 93 02 01 	sts	0x0102, r28
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 798:	8e ef       	ldi	r24, 0xFE	; 254
+ 79a:	80 93 e8 00 	sts	0x00E8, r24
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+			for (i=1; i<5; i++) {
+ 79e:	41 e0       	ldi	r20, 0x01	; 1
+			return;
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+ 7a0:	8c ed       	ldi	r24, 0xDC	; 220
+ 7a2:	90 e0       	ldi	r25, 0x00	; 0
+ 7a4:	01 c0       	rjmp	.+2      	; 0x7a8 <__vector_12+0x14a>
+			for (i=1; i<5; i++) {
+ 7a6:	c9 01       	movw	r24, r18
+				UENUM = i;
+ 7a8:	40 93 e9 00 	sts	0x00E9, r20
+				en = pgm_read_byte(cfg++);
+ 7ac:	9c 01       	movw	r18, r24
+ 7ae:	2f 5f       	subi	r18, 0xFF	; 255
+ 7b0:	3f 4f       	sbci	r19, 0xFF	; 255
+ 7b2:	fc 01       	movw	r30, r24
+ 7b4:	54 91       	lpm	r21, Z
+				UECONX = en;
+ 7b6:	50 93 eb 00 	sts	0x00EB, r21
+				if (en) {
+ 7ba:	55 23       	and	r21, r21
+ 7bc:	61 f0       	breq	.+24     	; 0x7d6 <__vector_12+0x178>
+					UECFG0X = pgm_read_byte(cfg++);
+ 7be:	f9 01       	movw	r30, r18
+ 7c0:	24 91       	lpm	r18, Z
+ 7c2:	20 93 ec 00 	sts	0x00EC, r18
+					UECFG1X = pgm_read_byte(cfg++);
+ 7c6:	9c 01       	movw	r18, r24
+ 7c8:	2d 5f       	subi	r18, 0xFD	; 253
+ 7ca:	3f 4f       	sbci	r19, 0xFF	; 255
+			for (i=1; i<5; i++) {
+				UENUM = i;
+				en = pgm_read_byte(cfg++);
+				UECONX = en;
+				if (en) {
+					UECFG0X = pgm_read_byte(cfg++);
+ 7cc:	02 96       	adiw	r24, 0x02	; 2
+					UECFG1X = pgm_read_byte(cfg++);
+ 7ce:	fc 01       	movw	r30, r24
+ 7d0:	84 91       	lpm	r24, Z
+ 7d2:	80 93 ed 00 	sts	0x00ED, r24
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+			for (i=1; i<5; i++) {
+ 7d6:	4f 5f       	subi	r20, 0xFF	; 255
+ 7d8:	45 30       	cpi	r20, 0x05	; 5
+ 7da:	29 f7       	brne	.-54     	; 0x7a6 <__vector_12+0x148>
+				if (en) {
+					UECFG0X = pgm_read_byte(cfg++);
+					UECFG1X = pgm_read_byte(cfg++);
+				}
+			}
+			UERST = 0x1E;
+ 7dc:	8e e1       	ldi	r24, 0x1E	; 30
+ 7de:	80 93 ea 00 	sts	0x00EA, r24
+			UERST = 0;
+ 7e2:	10 92 ea 00 	sts	0x00EA, r1
+			return;
+ 7e6:	55 c0       	rjmp	.+170    	; 0x892 <__vector_12+0x234>
+		}
+		if (bRequest == GET_CONFIGURATION && bmRequestType == 0x80) {
+ 7e8:	28 30       	cpi	r18, 0x08	; 8
+ 7ea:	39 f4       	brne	.+14     	; 0x7fa <__vector_12+0x19c>
+ 7ec:	30 38       	cpi	r19, 0x80	; 128
+ 7ee:	71 f4       	brne	.+28     	; 0x80c <__vector_12+0x1ae>
+			usb_wait_in_ready();
+ 7f0:	0e 94 8d 01 	call	0x31a	; 0x31a <usb_wait_in_ready>
+			UEDATX = usb_configuration;
+ 7f4:	80 91 02 01 	lds	r24, 0x0102
+ 7f8:	2d c0       	rjmp	.+90     	; 0x854 <__vector_12+0x1f6>
+			usb_send_in();
+			return;
+		}
+
+		if (bRequest == GET_STATUS) {
+ 7fa:	22 23       	and	r18, r18
+ 7fc:	39 f4       	brne	.+14     	; 0x80c <__vector_12+0x1ae>
+			usb_wait_in_ready();
+ 7fe:	0e 94 8d 01 	call	0x31a	; 0x31a <usb_wait_in_ready>
+				UENUM = wIndex;
+				if (UECONX & (1<<STALLRQ)) i = 1;
+				UENUM = 0;
+			}
+			#endif
+			UEDATX = i;
+ 802:	10 92 f1 00 	sts	0x00F1, r1
+			UEDATX = 0;
+ 806:	10 92 f1 00 	sts	0x00F1, r1
+ 80a:	3c c0       	rjmp	.+120    	; 0x884 <__vector_12+0x226>
+				}
+				return;
+			}
+		}
+		#endif
+		if (wIndex == GAMEPAD_INTERFACE) {
+ 80c:	61 15       	cp	r22, r1
+ 80e:	71 05       	cpc	r23, r1
+ 810:	09 f0       	breq	.+2      	; 0x814 <__vector_12+0x1b6>
+ 812:	3c c0       	rjmp	.+120    	; 0x88c <__vector_12+0x22e>
+			if (bmRequestType == 0xA1) {
+ 814:	31 3a       	cpi	r19, 0xA1	; 161
+ 816:	09 f5       	brne	.+66     	; 0x85a <__vector_12+0x1fc>
+				if (bRequest == HID_GET_REPORT) {
+ 818:	21 30       	cpi	r18, 0x01	; 1
+ 81a:	79 f4       	brne	.+30     	; 0x83a <__vector_12+0x1dc>
+					usb_wait_in_ready();
+ 81c:	0e 94 8d 01 	call	0x31a	; 0x31a <usb_wait_in_ready>
+ 820:	80 e0       	ldi	r24, 0x00	; 0
+ 822:	90 e0       	ldi	r25, 0x00	; 0
+
+					for (i=0; i<sizeof(magic_init_bytes); i++) {
+						UEDATX = pgm_read_byte(&magic_init_bytes[i]);
+ 824:	fc 01       	movw	r30, r24
+ 826:	ee 51       	subi	r30, 0x1E	; 30
+ 828:	ff 4f       	sbci	r31, 0xFF	; 255
+ 82a:	e4 91       	lpm	r30, Z
+ 82c:	e0 93 f1 00 	sts	0x00F1, r30
+ 830:	01 96       	adiw	r24, 0x01	; 1
+		if (wIndex == GAMEPAD_INTERFACE) {
+			if (bmRequestType == 0xA1) {
+				if (bRequest == HID_GET_REPORT) {
+					usb_wait_in_ready();
+
+					for (i=0; i<sizeof(magic_init_bytes); i++) {
+ 832:	88 30       	cpi	r24, 0x08	; 8
+ 834:	91 05       	cpc	r25, r1
+ 836:	b1 f7       	brne	.-20     	; 0x824 <__vector_12+0x1c6>
+ 838:	25 c0       	rjmp	.+74     	; 0x884 <__vector_12+0x226>
+					}
+
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_GET_IDLE) {
+ 83a:	22 30       	cpi	r18, 0x02	; 2
+ 83c:	29 f4       	brne	.+10     	; 0x848 <__vector_12+0x1ea>
+					usb_wait_in_ready();
+ 83e:	0e 94 8d 01 	call	0x31a	; 0x31a <usb_wait_in_ready>
+					UEDATX = gamepad_idle_config;
+ 842:	80 91 03 01 	lds	r24, 0x0103
+ 846:	06 c0       	rjmp	.+12     	; 0x854 <__vector_12+0x1f6>
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_GET_PROTOCOL) {
+ 848:	23 30       	cpi	r18, 0x03	; 3
+ 84a:	01 f5       	brne	.+64     	; 0x88c <__vector_12+0x22e>
+					usb_wait_in_ready();
+ 84c:	0e 94 8d 01 	call	0x31a	; 0x31a <usb_wait_in_ready>
+					UEDATX = gamepad_protocol;
+ 850:	80 91 00 01 	lds	r24, 0x0100
+ 854:	80 93 f1 00 	sts	0x00F1, r24
+ 858:	15 c0       	rjmp	.+42     	; 0x884 <__vector_12+0x226>
+					usb_send_in();
+					return;
+				}
+			}
+			if (bmRequestType == 0x21) {
+ 85a:	31 32       	cpi	r19, 0x21	; 33
+ 85c:	b9 f4       	brne	.+46     	; 0x88c <__vector_12+0x22e>
+				if (bRequest == HID_SET_REPORT) {
+ 85e:	29 30       	cpi	r18, 0x09	; 9
+ 860:	41 f4       	brne	.+16     	; 0x872 <__vector_12+0x214>
+{
+	UEINTX = ~(1<<TXINI);
+}
+static inline void usb_wait_receive_out(void)
+{
+	while (!(UEINTX & (1<<RXOUTI))) ;
+ 862:	80 91 e8 00 	lds	r24, 0x00E8
+ 866:	82 ff       	sbrs	r24, 2
+ 868:	fc cf       	rjmp	.-8      	; 0x862 <__vector_12+0x204>
+}
+static inline void usb_ack_out(void)
+{
+	UEINTX = ~(1<<RXOUTI);
+ 86a:	8b ef       	ldi	r24, 0xFB	; 251
+ 86c:	80 93 e8 00 	sts	0x00E8, r24
+ 870:	09 c0       	rjmp	.+18     	; 0x884 <__vector_12+0x226>
+					usb_wait_receive_out();
+					usb_ack_out();
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_SET_IDLE) {
+ 872:	2a 30       	cpi	r18, 0x0A	; 10
+ 874:	19 f4       	brne	.+6      	; 0x87c <__vector_12+0x21e>
+					gamepad_idle_config = (wValue >> 8);
+ 876:	d0 93 03 01 	sts	0x0103, r29
+ 87a:	04 c0       	rjmp	.+8      	; 0x884 <__vector_12+0x226>
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_SET_PROTOCOL) {
+ 87c:	2b 30       	cpi	r18, 0x0B	; 11
+ 87e:	31 f4       	brne	.+12     	; 0x88c <__vector_12+0x22e>
+					gamepad_protocol = wValue;
+ 880:	c0 93 00 01 	sts	0x0100, r28
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 884:	8e ef       	ldi	r24, 0xFE	; 254
+ 886:	80 93 e8 00 	sts	0x00E8, r24
+ 88a:	03 c0       	rjmp	.+6      	; 0x892 <__vector_12+0x234>
+					return;
+				}
+			}
+		}
+	}
+	UECONX = (1<<STALLRQ) | (1<<EPEN);	// stall
+ 88c:	81 e2       	ldi	r24, 0x21	; 33
+ 88e:	80 93 eb 00 	sts	0x00EB, r24
+}
+ 892:	ff 91       	pop	r31
+ 894:	ef 91       	pop	r30
+ 896:	df 91       	pop	r29
+ 898:	cf 91       	pop	r28
+ 89a:	bf 91       	pop	r27
+ 89c:	af 91       	pop	r26
+ 89e:	9f 91       	pop	r25
+ 8a0:	8f 91       	pop	r24
+ 8a2:	7f 91       	pop	r23
+ 8a4:	6f 91       	pop	r22
+ 8a6:	5f 91       	pop	r21
+ 8a8:	4f 91       	pop	r20
+ 8aa:	3f 91       	pop	r19
+ 8ac:	2f 91       	pop	r18
+ 8ae:	1f 91       	pop	r17
+ 8b0:	0f 90       	pop	r0
+ 8b2:	0f be       	out	0x3f, r0	; 63
+ 8b4:	0f 90       	pop	r0
+ 8b6:	1f 90       	pop	r1
+ 8b8:	18 95       	reti
+
+000008ba <main>:
+
+int main(void) {
+ 8ba:	cf 93       	push	r28
+ 8bc:	df 93       	push	r29
+ 8be:	cd b7       	in	r28, 0x3d	; 61
+ 8c0:	de b7       	in	r29, 0x3e	; 62
+ 8c2:	27 97       	sbiw	r28, 0x07	; 7
+ 8c4:	0f b6       	in	r0, 0x3f	; 63
+ 8c6:	f8 94       	cli
+ 8c8:	de bf       	out	0x3e, r29	; 62
+ 8ca:	0f be       	out	0x3f, r0	; 63
+ 8cc:	cd bf       	out	0x3d, r28	; 61
+	// Make sure our watchdog timer is disabled!
+	wdt_reset(); 
+ 8ce:	a8 95       	wdr
+	MCUSR &= ~(1 << WDRF); 
+ 8d0:	84 b7       	in	r24, 0x34	; 52
+ 8d2:	87 7f       	andi	r24, 0xF7	; 247
+ 8d4:	84 bf       	out	0x34, r24	; 52
+	wdt_disable();
+ 8d6:	88 e1       	ldi	r24, 0x18	; 24
+ 8d8:	0f b6       	in	r0, 0x3f	; 63
+ 8da:	f8 94       	cli
+ 8dc:	80 93 60 00 	sts	0x0060, r24
+ 8e0:	10 92 60 00 	sts	0x0060, r1
+ 8e4:	0f be       	out	0x3f, r0	; 63
+
+	// Start up the USART for serial communications
+	// 25 corresponds to 38400 baud - see datasheet for more values
+	USART_Init(25);// 103 corresponds to 9600, 8 corresponds to 115200 baud, 3 for 250000
+ 8e6:	89 e1       	ldi	r24, 0x19	; 25
+ 8e8:	90 e0       	ldi	r25, 0x00	; 0
+ 8ea:	0e 94 42 01 	call	0x284	; 0x284 <USART_Init>
+	
+	// set the prescale for the USB for our 16 MHz clock
+	CPU_PRESCALE(0);
+ 8ee:	80 e8       	ldi	r24, 0x80	; 128
+ 8f0:	80 93 61 00 	sts	0x0061, r24
+ 8f4:	10 92 61 00 	sts	0x0061, r1
+
+	// Initialize our USB connection
+	usb_init();
+ 8f8:	0e 94 92 01 	call	0x324	; 0x324 <usb_init>
+	while (!usb_configured()){
+ 8fc:	18 c0       	rjmp	.+48     	; 0x92e <main+0x74>
+		LEDon(TXLED);
+ 8fe:	85 e0       	ldi	r24, 0x05	; 5
+ 900:	0e 94 6e 01 	call	0x2dc	; 0x2dc <LEDon>
+ 904:	8f ef       	ldi	r24, 0xFF	; 255
+ 906:	90 e7       	ldi	r25, 0x70	; 112
+ 908:	a2 e0       	ldi	r26, 0x02	; 2
+ 90a:	81 50       	subi	r24, 0x01	; 1
+ 90c:	90 40       	sbci	r25, 0x00	; 0
+ 90e:	a0 40       	sbci	r26, 0x00	; 0
+ 910:	e1 f7       	brne	.-8      	; 0x90a <main+0x50>
+ 912:	00 c0       	rjmp	.+0      	; 0x914 <main+0x5a>
+ 914:	00 00       	nop
+		_delay_ms(50);
+		LEDoff(TXLED);
+ 916:	85 e0       	ldi	r24, 0x05	; 5
+ 918:	0e 94 7d 01 	call	0x2fa	; 0x2fa <LEDoff>
+ 91c:	8f ef       	ldi	r24, 0xFF	; 255
+ 91e:	90 e7       	ldi	r25, 0x70	; 112
+ 920:	a2 e0       	ldi	r26, 0x02	; 2
+ 922:	81 50       	subi	r24, 0x01	; 1
+ 924:	90 40       	sbci	r25, 0x00	; 0
+ 926:	a0 40       	sbci	r26, 0x00	; 0
+ 928:	e1 f7       	brne	.-8      	; 0x922 <main+0x68>
+ 92a:	00 c0       	rjmp	.+0      	; 0x92c <main+0x72>
+ 92c:	00 00       	nop
+	// set the prescale for the USB for our 16 MHz clock
+	CPU_PRESCALE(0);
+
+	// Initialize our USB connection
+	usb_init();
+	while (!usb_configured()){
+ 92e:	0e 94 b7 01 	call	0x36e	; 0x36e <usb_configured>
+ 932:	88 23       	and	r24, r24
+ 934:	21 f3       	breq	.-56     	; 0x8fe <main+0x44>
+ 936:	8f ef       	ldi	r24, 0xFF	; 255
+ 938:	99 e6       	ldi	r25, 0x69	; 105
+ 93a:	a8 e1       	ldi	r26, 0x18	; 24
+ 93c:	81 50       	subi	r24, 0x01	; 1
+ 93e:	90 40       	sbci	r25, 0x00	; 0
+ 940:	a0 40       	sbci	r26, 0x00	; 0
+ 942:	e1 f7       	brne	.-8      	; 0x93c <main+0x82>
+ 944:	00 c0       	rjmp	.+0      	; 0x946 <main+0x8c>
+ 946:	00 00       	nop
+ 948:	af e3       	ldi	r26, 0x3F	; 63
+ 94a:	bc e9       	ldi	r27, 0x9C	; 156
+ 94c:	11 97       	sbiw	r26, 0x01	; 1
+ 94e:	f1 f7       	brne	.-4      	; 0x94c <main+0x92>
+ 950:	00 c0       	rjmp	.+0      	; 0x952 <main+0x98>
+ 952:	00 00       	nop
+        //  want from the dataForController_t, and then wait for the
+        //  ATmega328p to send that back to us.
+        // The serialRead(number) function reads the serial port, and the
+        //  number is a timeout (in ms) so if there's a transmission error,
+        //  we don't stall forever.
+		LEDon(TXLED);
+ 954:	85 e0       	ldi	r24, 0x05	; 5
+ 956:	0e 94 6e 01 	call	0x2dc	; 0x2dc <LEDon>
+		flushSerialRead();
+ 95a:	0e 94 66 01 	call	0x2cc	; 0x2cc <flushSerialRead>
+		serialWrite(0);
+ 95e:	80 e0       	ldi	r24, 0x00	; 0
+ 960:	0e 94 5f 01 	call	0x2be	; 0x2be <serialWrite>
+		buttonData1 = serialRead(25);
+ 964:	89 e1       	ldi	r24, 0x19	; 25
+ 966:	90 e0       	ldi	r25, 0x00	; 0
+ 968:	0e 94 4d 01 	call	0x29a	; 0x29a <serialRead>
+ 96c:	08 2f       	mov	r16, r24
+		       
+		serialWrite(1);
+ 96e:	81 e0       	ldi	r24, 0x01	; 1
+ 970:	0e 94 5f 01 	call	0x2be	; 0x2be <serialWrite>
+		buttonData2 = serialRead(25);
+ 974:	89 e1       	ldi	r24, 0x19	; 25
+ 976:	90 e0       	ldi	r25, 0x00	; 0
+ 978:	0e 94 4d 01 	call	0x29a	; 0x29a <serialRead>
+ 97c:	18 2f       	mov	r17, r24
+        
+		serialWrite(2);
+ 97e:	82 e0       	ldi	r24, 0x02	; 2
+ 980:	0e 94 5f 01 	call	0x2be	; 0x2be <serialWrite>
+		buttonData3 = serialRead(25);
+ 984:	89 e1       	ldi	r24, 0x19	; 25
+ 986:	90 e0       	ldi	r25, 0x00	; 0
+ 988:	0e 94 4d 01 	call	0x29a	; 0x29a <serialRead>
+ 98c:	f8 2e       	mov	r15, r24
+        
+		serialWrite(3);
+ 98e:	83 e0       	ldi	r24, 0x03	; 3
+ 990:	0e 94 5f 01 	call	0x2be	; 0x2be <serialWrite>
+		dataToSend.leftStickX = serialRead(25);
+ 994:	89 e1       	ldi	r24, 0x19	; 25
+ 996:	90 e0       	ldi	r25, 0x00	; 0
+ 998:	0e 94 4d 01 	call	0x29a	; 0x29a <serialRead>
+ 99c:	28 2f       	mov	r18, r24
+ 99e:	22 0f       	add	r18, r18
+ 9a0:	9b 81       	ldd	r25, Y+3	; 0x03
+ 9a2:	91 70       	andi	r25, 0x01	; 1
+ 9a4:	92 2b       	or	r25, r18
+ 9a6:	9b 83       	std	Y+3, r25	; 0x03
+ 9a8:	88 1f       	adc	r24, r24
+ 9aa:	88 27       	eor	r24, r24
+ 9ac:	88 1f       	adc	r24, r24
+ 9ae:	9c 81       	ldd	r25, Y+4	; 0x04
+ 9b0:	9e 7f       	andi	r25, 0xFE	; 254
+ 9b2:	98 2b       	or	r25, r24
+ 9b4:	9c 83       	std	Y+4, r25	; 0x04
+        
+		serialWrite(4);
+ 9b6:	84 e0       	ldi	r24, 0x04	; 4
+ 9b8:	0e 94 5f 01 	call	0x2be	; 0x2be <serialWrite>
+		dataToSend.leftStickY = serialRead(25);
+ 9bc:	89 e1       	ldi	r24, 0x19	; 25
+ 9be:	90 e0       	ldi	r25, 0x00	; 0
+ 9c0:	0e 94 4d 01 	call	0x29a	; 0x29a <serialRead>
+ 9c4:	28 2f       	mov	r18, r24
+ 9c6:	22 0f       	add	r18, r18
+ 9c8:	9c 81       	ldd	r25, Y+4	; 0x04
+ 9ca:	91 70       	andi	r25, 0x01	; 1
+ 9cc:	92 2b       	or	r25, r18
+ 9ce:	9c 83       	std	Y+4, r25	; 0x04
+ 9d0:	88 1f       	adc	r24, r24
+ 9d2:	88 27       	eor	r24, r24
+ 9d4:	88 1f       	adc	r24, r24
+ 9d6:	9d 81       	ldd	r25, Y+5	; 0x05
+ 9d8:	9e 7f       	andi	r25, 0xFE	; 254
+ 9da:	98 2b       	or	r25, r24
+ 9dc:	9d 83       	std	Y+5, r25	; 0x05
+        
+		serialWrite(5);
+ 9de:	85 e0       	ldi	r24, 0x05	; 5
+ 9e0:	0e 94 5f 01 	call	0x2be	; 0x2be <serialWrite>
+		dataToSend.rightStickX = serialRead(25);
+ 9e4:	89 e1       	ldi	r24, 0x19	; 25
+ 9e6:	90 e0       	ldi	r25, 0x00	; 0
+ 9e8:	0e 94 4d 01 	call	0x29a	; 0x29a <serialRead>
+ 9ec:	28 2f       	mov	r18, r24
+ 9ee:	22 0f       	add	r18, r18
+ 9f0:	9d 81       	ldd	r25, Y+5	; 0x05
+ 9f2:	91 70       	andi	r25, 0x01	; 1
+ 9f4:	92 2b       	or	r25, r18
+ 9f6:	9d 83       	std	Y+5, r25	; 0x05
+ 9f8:	88 1f       	adc	r24, r24
+ 9fa:	88 27       	eor	r24, r24
+ 9fc:	88 1f       	adc	r24, r24
+ 9fe:	9e 81       	ldd	r25, Y+6	; 0x06
+ a00:	9e 7f       	andi	r25, 0xFE	; 254
+ a02:	98 2b       	or	r25, r24
+ a04:	9e 83       	std	Y+6, r25	; 0x06
+        
+		serialWrite(6);
+ a06:	86 e0       	ldi	r24, 0x06	; 6
+ a08:	0e 94 5f 01 	call	0x2be	; 0x2be <serialWrite>
+		dataToSend.rightStickY= serialRead(25);
+ a0c:	89 e1       	ldi	r24, 0x19	; 25
+ a0e:	90 e0       	ldi	r25, 0x00	; 0
+ a10:	0e 94 4d 01 	call	0x29a	; 0x29a <serialRead>
+ a14:	28 2f       	mov	r18, r24
+ a16:	22 0f       	add	r18, r18
+ a18:	9e 81       	ldd	r25, Y+6	; 0x06
+ a1a:	91 70       	andi	r25, 0x01	; 1
+ a1c:	92 2b       	or	r25, r18
+ a1e:	9e 83       	std	Y+6, r25	; 0x06
+ a20:	88 1f       	adc	r24, r24
+ a22:	88 27       	eor	r24, r24
+ a24:	88 1f       	adc	r24, r24
+ a26:	9f 81       	ldd	r25, Y+7	; 0x07
+ a28:	9e 7f       	andi	r25, 0xFE	; 254
+ a2a:	98 2b       	or	r25, r24
+ a2c:	9f 83       	std	Y+7, r25	; 0x07
+		
+		LEDoff(TXLED);
+ a2e:	85 e0       	ldi	r24, 0x05	; 5
+ a30:	0e 94 7d 01 	call	0x2fa	; 0x2fa <LEDoff>
+		
+		// Now, we take the button data we got in and input that information
+        //  into our controller data we want to send
+		dataToSend.triangleOn = 1 & (buttonData1 >> 0);
+ a34:	90 2f       	mov	r25, r16
+ a36:	91 70       	andi	r25, 0x01	; 1
+ a38:	29 81       	ldd	r18, Y+1	; 0x01
+ a3a:	2c 7f       	andi	r18, 0xFC	; 252
+		dataToSend.circleOn = 1 & (buttonData1 >> 1);
+ a3c:	80 2f       	mov	r24, r16
+ a3e:	82 70       	andi	r24, 0x02	; 2
+ a40:	29 2b       	or	r18, r25
+ a42:	28 2b       	or	r18, r24
+		dataToSend.squareOn = 1 & (buttonData1 >> 2);
+ a44:	90 2f       	mov	r25, r16
+ a46:	94 70       	andi	r25, 0x04	; 4
+ a48:	23 7f       	andi	r18, 0xF3	; 243
+		dataToSend.crossOn = 1 & (buttonData1 >> 3);
+ a4a:	80 2f       	mov	r24, r16
+ a4c:	88 70       	andi	r24, 0x08	; 8
+ a4e:	29 2b       	or	r18, r25
+ a50:	28 2b       	or	r18, r24
+		dataToSend.l1On = 1 & (buttonData1 >> 4);
+ a52:	90 2f       	mov	r25, r16
+ a54:	90 71       	andi	r25, 0x10	; 16
+ a56:	2f 7c       	andi	r18, 0xCF	; 207
+		dataToSend.l2On = 1 & (buttonData1 >> 5);
+ a58:	80 2f       	mov	r24, r16
+ a5a:	80 72       	andi	r24, 0x20	; 32
+ a5c:	29 2b       	or	r18, r25
+ a5e:	28 2b       	or	r18, r24
+		dataToSend.l3On = 1 & (buttonData1 >> 6);
+ a60:	80 2f       	mov	r24, r16
+ a62:	80 74       	andi	r24, 0x40	; 64
+ a64:	2f 73       	andi	r18, 0x3F	; 63
+		dataToSend.r1On = 1 & (buttonData1 >> 7);
+ a66:	00 78       	andi	r16, 0x80	; 128
+ a68:	28 2b       	or	r18, r24
+ a6a:	20 2b       	or	r18, r16
+ a6c:	29 83       	std	Y+1, r18	; 0x01
+		
+		dataToSend.r2On = 1 & (buttonData2 >> 0);
+ a6e:	91 2f       	mov	r25, r17
+ a70:	91 70       	andi	r25, 0x01	; 1
+ a72:	3a 81       	ldd	r19, Y+2	; 0x02
+ a74:	3c 7f       	andi	r19, 0xFC	; 252
+		dataToSend.r3On = 1 & (buttonData2 >> 1);
+ a76:	81 2f       	mov	r24, r17
+ a78:	82 70       	andi	r24, 0x02	; 2
+ a7a:	39 2b       	or	r19, r25
+ a7c:	38 2b       	or	r19, r24
+		dataToSend.selectOn = 1 & (buttonData2 >> 2);
+ a7e:	91 2f       	mov	r25, r17
+ a80:	94 70       	andi	r25, 0x04	; 4
+ a82:	33 7f       	andi	r19, 0xF3	; 243
+		dataToSend.startOn = 1 & (buttonData2 >> 3);
+ a84:	81 2f       	mov	r24, r17
+ a86:	88 70       	andi	r24, 0x08	; 8
+ a88:	39 2b       	or	r19, r25
+ a8a:	38 2b       	or	r19, r24
+		dataToSend.homeOn = 1 & (buttonData2 >> 4);
+ a8c:	91 2f       	mov	r25, r17
+ a8e:	90 71       	andi	r25, 0x10	; 16
+ a90:	3f 7c       	andi	r19, 0xCF	; 207
+		dataToSend.dpadLeftOn = 1 & (buttonData2 >> 5);
+ a92:	81 2f       	mov	r24, r17
+ a94:	80 72       	andi	r24, 0x20	; 32
+ a96:	39 2b       	or	r19, r25
+ a98:	38 2b       	or	r19, r24
+		dataToSend.dpadUpOn = 1 & (buttonData2 >> 6);
+ a9a:	81 2f       	mov	r24, r17
+ a9c:	80 74       	andi	r24, 0x40	; 64
+ a9e:	3f 73       	andi	r19, 0x3F	; 63
+		dataToSend.dpadRightOn = 1 & (buttonData2 >> 7);
+ aa0:	10 78       	andi	r17, 0x80	; 128
+ aa2:	38 2b       	or	r19, r24
+ aa4:	31 2b       	or	r19, r17
+ aa6:	3a 83       	std	Y+2, r19	; 0x02
+		
+		dataToSend.dpadDownOn = 1 & (buttonData3 >> 0);
+ aa8:	8f 2d       	mov	r24, r15
+ aaa:	81 70       	andi	r24, 0x01	; 1
+ aac:	4b 81       	ldd	r20, Y+3	; 0x03
+ aae:	4e 7f       	andi	r20, 0xFE	; 254
+ ab0:	48 2b       	or	r20, r24
+ ab2:	4b 83       	std	Y+3, r20	; 0x03
+		
+        
+        // Finally, we send the data out via the USB port
+		sendPS3Data(dataToSend);	
+ ab4:	5c 81       	ldd	r21, Y+4	; 0x04
+ ab6:	6d 81       	ldd	r22, Y+5	; 0x05
+ ab8:	7e 81       	ldd	r23, Y+6	; 0x06
+ aba:	8f 81       	ldd	r24, Y+7	; 0x07
+ abc:	0e 94 f5 01 	call	0x3ea	; 0x3ea <sendPS3Data>
+ ac0:	43 cf       	rjmp	.-378    	; 0x948 <main+0x8e>
+
+00000ac2 <memcpy_P>:
+ ac2:	fb 01       	movw	r30, r22
+ ac4:	dc 01       	movw	r26, r24
+ ac6:	02 c0       	rjmp	.+4      	; 0xacc <memcpy_P+0xa>
+ ac8:	05 90       	lpm	r0, Z+
+ aca:	0d 92       	st	X+, r0
+ acc:	41 50       	subi	r20, 0x01	; 1
+ ace:	50 40       	sbci	r21, 0x00	; 0
+ ad0:	d8 f7       	brcc	.-10     	; 0xac8 <memcpy_P+0x6>
+ ad2:	08 95       	ret
+
+00000ad4 <_exit>:
+ ad4:	f8 94       	cli
+
+00000ad6 <__stop_program>:
+ ad6:	ff cf       	rjmp	.-2      	; 0xad6 <__stop_program>

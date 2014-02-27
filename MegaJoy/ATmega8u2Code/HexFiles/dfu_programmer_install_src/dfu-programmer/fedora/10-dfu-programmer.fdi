@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<deviceinfo version="0.2">
+  <device>
+
+    <!-- Grant access to program the DFU devices to uucp group. -->
+
+    <!-- Atmel -->
+    <match key="info.subsystem" contains="usb_device">
+      <match key="usb_device.vendor_id" int="0x03eb">
+        <match key="usb_device.product_id" int_outof="0x2fff;0x2ffd;0x2ffb;0x2ff9;0x2ffa;0x2ff8;0x2ff7;0x2ff6;0x2ff4;0x2ff3;0x2ff2;0x2ff1">
+          <append key="info.capabilities" type="strlist">dfu-device</append>
+          <append key="info.capabilities" type="strlist">access_control</append>
+          <merge key="access_control.file" type="copy_property">linux.device_file</merge>
+          <merge key="access_control.type" type="string">dfu-device</merge>
+          <merge key="access_control.grant_group" type="strlist">uucp</merge>
+        </match>
+      </match>
+    </match>
+  </device>
+</deviceinfo>

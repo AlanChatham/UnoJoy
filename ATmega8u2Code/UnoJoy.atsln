@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "UnoJoy", "UnoJoy.cproj", "{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Hex Files|AVR = Hex Files|AVR
+		HexFiles|AVR = HexFiles|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Debug|AVR.ActiveCfg = Debug|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Debug|AVR.Build.0 = Debug|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Hex Files|AVR.ActiveCfg = Hex Files|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Hex Files|AVR.Build.0 = Hex Files|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.HexFiles|AVR.ActiveCfg = HexFiles|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.HexFiles|AVR.Build.0 = HexFiles|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Release|AVR.ActiveCfg = Release|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

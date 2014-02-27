@@ -1,0 +1,49 @@
+Original Author:
+    - Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+
+Contributors:
+    - Reinhard Arlt
+        - at89c5131 chip support
+    - Anton Blad
+        - at90usb162 and at90usb82 chip support
+    - David Brownell
+        - compiler flag improvements
+        - command line argument processing improvements
+        - debugging system improvements
+        - significant man page improvements
+        - support for the at90usb series AVR chips
+        - the beginnings of the move over to using stdint.h
+    - Nick Hibma
+        - bug fixes
+    - Markus Schneider
+        - OS X porting issues
+    - Geoffrey Wossum
+        - added reset command
+    - Sean D'Epagnier
+        - eeprom bug fix
+        - 4K bootloader support fix
+    - Peter Gammie
+        - at90usb647 PID fix
+    - Zachary Clifford
+        - completed AVR32 support
+        - identified a number of off-by-one errors waiting to happen
+        - identified that AVR32 "User Pages" aren't supported yet
+        - patch to allow proper handling of the trampoline code
+        - patch to allow flashing user flash space & STDIN
+        - patch to enable support for windows using mingw32
+        - patch to enable setting/getting fuses for the AVR32 devices
+    - Donald Davis
+        - patch with new AVR devices & testing of support for the devices
+    - Brad Schick
+        - identified that the flash memory overlaps the bootloader memory
+        - identified the off-by-one issue when the bootloader is in upper memory
+    - Xavier Leprevost
+        - patch to fix an error in the avr32 user flash dump command
+    - Dave Fletcher
+        - patch to enable atmega32u2 chips
+    - Torsten Rottmann
+        - patch to enable libusb 1.0 support
+    - Mitko
+        - patch to enable at32uc3b1512 and at32uc3b0512 chips
+    - Darren Gibbs
+        - identified dead/bad code around the bootloader overlap checking

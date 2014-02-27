@@ -1,0 +1,96 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf330
+{\fonttbl\f0\fswiss\fcharset77 Helvetica-Bold;\f1\fswiss\fcharset77 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11904\paperh16836\margl1440\margr1440\vieww9020\viewh7500\viewkind0
+\pard\tx440\qj
+
+\f0\b\fs28 \cf0 General Information\
+
+\f1\b0\fs24 \
+This is libusb version 0.1.13beta. libusb is a library which allows userspace application access to USB devices.\
+\
+The official ftp site is:\
+	{\field{\*\fldinst{HYPERLINK "ftp://ftp.libusb.sourceforge.net/pub/libusb/"}}{\fldrslt ftp://ftp.libusb.sourceforge.net/pub/libusb/}}\
+\
+The official web site is:\
+	{\field{\*\fldinst{HYPERLINK "http://libusb.sourceforge.net/"}}{\fldrslt http://libusb.sourceforge.net/}}\
+\
+A mailing list is located at:\
+	{\field{\*\fldinst{HYPERLINK "mailto:libusb-devel@lists.sourceforge.net"}}{\fldrslt libusb-devel@lists.sourceforge.net}}\
+\
+
+\f0\b\fs28 Installation\
+
+\f1\b0\fs24 \
+See the file \'d4INSTALL\'d5\
+\
+
+\f0\b\fs28 How to report bugs\
+
+\f1\b0\fs24 \
+To report a bug, visit {\field{\*\fldinst{HYPERLINK "http://www.sourceforge.net/projects/libusb/"}}{\fldrslt http://www.sourceforge.net/projects/libusb/}} and fill out a bug report form.\
+\
+\pard\tx440\tx780\li440\fi-440\qj
+\cf0 Please make sure to include:\
+\
+\'a5	The version of libusb\
+\
+\'a5	Information about your system. For instance:\
+\
+	\'d0	What operating system and version\
+	\'d0	For Linux, what version of the C library\
+\
+	And anything else you think is relevant.\
+\
+\'a5	How to reproduce the bug. \
+\
+\	If you can reproduce it with the testlibusb program that is built in the libusb/ directory, that will be most convenient. Otherwise, please include a short test program that exhibits the behavior. As a last resort, you can also provide a pointer to a larger piece of software that can be downloaded.\
+\
+\'a5	If the bug was a crash, the exact text that was printed out when the crash occured.\
+\
+\'a5	Further information such as stack traces may be useful, but is not necessary.\
+\pard\qj
+\cf0 \
+\pard\qj
+
+\f0\b\fs28 \cf0 Patches\
+\pard\qj
+
+\f1\b0\fs24 \cf0 \
+Patches can be sent to {\field{\*\fldinst{HYPERLINK "mailto:libusb-devel@lists.sourceforge.net"}}{\fldrslt libusb-devel@lists.sourceforge.net}}.\
+\
+If the patch fixes a bug, it is usually a good idea to include all the information described in \'d2How to Report Bugs\'d3.\
+\
+\pard\qj
+
+\f0\b\fs28 \cf0 Building\
+\pard\qj
+
+\f1\b0\fs24 \cf0 \
+It should be as simple as running these two commands:\
+\
+./configure\
+make\
+\
+One common problem is building the SGML documentation. On some systems, like SuSE, you will need to set the SGML_CATALOG_FILES environment variable to something similar to this (actual paths may vary):\
+\
+export SGML_CATALOG_FILES="/usr/share/sgml/CATALOG.docbook_3:/usr/share/sgml/CATALOG.docbook-dsssl-stylesheets:/usr/share/sgml/openjade/catalog"\
+\
+On recent versions of Fedora Core (FC5 Test 2 atleast), this command may be\
+needed:\
+\
+export SGML_CATALOG_FILES="/etc/sgml/catalog"\
+\
+or possibly:\
+\
+export SGML_CATALOG_FILES="/etc/sgml/docbook"\
+\
+\pard\qj
+
+\f0\b\fs28 \cf0 C++ Support\
+\pard\qj
+
+\f1\b0\fs24 \cf0 \
+There are reasonable unit tests available \'d1 run \'d2make check\'d3 to do the tests. Note that some of the tests will unexpectedly pass if you don\'d5t have a specfic type of Logitech mouse connected, and some are expected to fail unless you are running as root (or otherwise have permissions to access the device).\
+\
+Building the C++ documentation requires Doxygen ({\field{\*\fldinst{HYPERLINK "http://www.stack.nl/~dimitri/doxygen/"}}{\fldrslt http://www.stack.nl/~dimitri/doxygen/}})}

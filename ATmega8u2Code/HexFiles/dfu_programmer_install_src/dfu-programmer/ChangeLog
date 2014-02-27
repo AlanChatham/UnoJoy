@@ -1,0 +1,512 @@
+2010-05-02 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* AUTHORS, src/commands.c: Removed confusing & useless code
+	  that Darren Gibbs found.
+
+2010-04-08 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* AUTHORS, src/arguments.c, src/arguments.h
+	  doc/dfu-programmer.1: Added the patch Mitko sent
+	  to enable at32uc3b1512 and at32uc3b0512 chips.
+
+2010-02-15 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* config.h.in, configure.ac, AUTHORS, src/commands.c,
+	  src/dfu.c, src/dfu-device.h, src/dfu.h, src/main.c:
+	  Added the patch Torsten Rottmann sent to enable
+	  libusb 1.0 support, plus I some changes to allow for
+	  switching via a configure file flag.
+
+2010-02-15 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, src/arguments.h, dfu-programmer.1,
+	  AUTHORS: Added the patch Dave Fletcher sent to
+	  enable atmega32u2 support.
+
+2009-09-09 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/commands.c: Fix a bug due to the order of the
+	  bootloader suppression and the lower boundary
+	  verification.  Additionally, fixed an off by 1 error
+	  in the flash address verification.
+
+2009-08-22 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* fedora/dfu-programmer.spec.in, configure.ac, NEWS:
+	  Updated to the new 0.5.2 release.
+
+2009-08-13 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, src/arguments.h, src/atmel.c,
+	  src/commands.c: Fixed the broken state that the AVR
+	  devices were in due to not selecting the correct memory
+	  page prior to flashing.  Broke apart the
+	  eeprom/flash/user page flashing/dumping into separate
+	  functions so the maintenance will be easier.  Cleaned
+	  up the address ranges so they are consistent across
+	  memory types.  Fixed some debug statements that should
+	  have been going to stderr instead of stdout that made
+	  the output of a dump garbled.  Cleaned up some more
+	  off by 1 errors that were in the dump functionality.
+	  Verified my changes on my AVR32 and AVR boards.
+
+2009-05-31 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/atmel.c: Fix a memory address identification bug
+	  that would cause the value 0xff to not be recognized.
+	* src/commands.c, AUTHORS: Applied the patch that Xavier
+	  Leprevost created to allow dumping avr32 user flash
+	  properly.
+
+2009-05-23 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/atmel.c: Fix a buffer overrun error that would
+	  cause a core dump sometimes.
+
+2009-04-30 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, src/arguments.h, src/atmel.c,
+	  src/atmel.h, src/commands.c, AUTHORS: Applied the
+	  patch from Zachary Clifford to enable all the AVR32
+	  fuses to be set or gotten (all BOD fuse setting is
+	  disabled for device safety since they can brick your
+	  device.)
+
+2009-04-29 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, src/atmel.c: Fix the off by one issue
+	  Brad pointed out for blank checking.  Fix a bug in the
+	  blank checking for devices with greater than 65k of
+	  memory that were not AVR32 based, so that all the
+	  memory is checked, not just a portion of the lower bytes.
+
+2009-04-28 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, src/arguments.h, src/commands.c: Fix
+	  a memory overlap issue between the bootloader & the
+	  flash memory available for the new firmware.
+	* AUTHORS: Added Brad Schick to the list of contributers.
+
+2009-04-27 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/atmel.c: Fix a crash due to larger sized images
+	  not being handled properly in a loop.
+
+2009-01-22 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/dfu.c: Applied the patch from Zachary Clifford
+	  to support Windows.
+	* AUTHORS: Update the file to reflect Zach's patches.
+
+2009-01-18 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, src/arguments.h, src/atmel.c,
+	  src/atmel.h, src/commands.c, src/intel_hex.c,
+	  doc/dfu-programmer.1: Applied the patch from Zachary
+	  Clifford to support programming user flash on the
+	  AVR32 chips and reading flash information from STDIN.
+	  Additionally, updated the man page.
+
+2008-12-10 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/*, AUTHORS, docs/dfu-programmer.1 NEWS,
+	  fedora/dfu-programmer.spec.in, configure.ac: Applied
+	  the patch to add support for ignoring data writes that
+	  could take place in the bootloader region.
+
+2008-12-03 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/*, AUTHORS, docs/dfu-programmer.1: Update the
+	  project to support all the devices that FLIP supports.
+	* NEWS, fedora/dfu-programmer.spec.in, configure.ac:
+	  Updated the latest news about the 0.5.0 release
+
+2008-10-31 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/*, AUTHORS, fedora/dfu-programmer.spec.in,
+	  docs/dfu-programmer.1: Apply Zachary Clifford patch to
+	  add more support for AVR32 devices & merged the two
+	  together.
+	* src/*: Fixed a number of off-by-one errors that were
+	  all over the place.
+
+2008-10-02 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/atmel.c: Enable chip erase, blank checking and
+	  reading from flash for the AVR32 devices.
+
+2008-10-01 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/*, fedora/10-dfu-programmer.fdi: Change the
+	  parameters to use a struct instead of passing the usb
+	  information as separate parameters.  Additionally
+	  cleaned up some of the code to make the way for AVR32
+	  support & added very basic identification support.
+
+2008-09-26 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, AUTHORS: Fixed PID values for the
+	  at90usb82 and at90usb182 chips based on Peter's findings.
+
+2008-09-13 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* fedora/dfu-programmer.spec.in,
+	  fedora/10-dfu-programmer.fdi: Fixed the broken HAL rules.
+
+2008-09-10 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* src/arguments.c, src/arguments.h, atmel.c, atmel.h
+	  commands.c, commands.h, dfu-bool.h, dfu.c, dfu.h
+	  main.c: Changed to using dfu_bool & stdint.h values.
+	* configure.ac: Removed dependency on stdbool.h.
+
+2008-08-29 Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+	* fedora/dfu-programmer.spec.in,
+	  fedora/99-dfu-programmer.rules,
+	  fedora/10-dfu-programmer.fdi,
+	  fedora/dfu-programmer-at90usb.perms,
+	  fedora/dfu-programmer-at89c51.perms: Changed the permission
+	  handling code to be based on HAL instead of PAM to keep up
+	  with Fedora 9+ releases.
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.4.6 release
+
+2008-08-20 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+	* src/arguments.c, AUTHORS: Apply the patch Sean D'Epagnier
+	  sent to enable 4K bootloaders.
+	* fedora/dfu-programmer.spec.in, configure.ac:
+	  Incremented the release number
+	* NEWS: Updated the latest news about the 0.4.5 release
+
+2008-07-22 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+	* src/arguments.c, AUTHORS: Apply the patch Sean D'Epagnier
+	  sent to fix eeprom flashing.
+
+2008-05-22 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+	* docs/dfu-programmer.1, src/arguments.c, src/arguments.h,
+	  src/atmel.c, src/atmel.h, src/commands.c: Added support
+	  for eeprom-dump and eeprom-flash for the supported chips.
+	* configure.ac, config.h.in: Added checks for stdbool.h
+	  stdint.h.
+
+2007-11-19 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* docs/dfu-programmer.1, src/arguments.c, src/arguments.h,
+	  src/commands.c, AUTHORS: Applied the patch that Geoffrey
+	  Wossum provided to add a reset command.
+	* fedora/*: Adding udev rules for and permissions so that
+	  the console owner will automatically be able to flash
+	  any of the devices supported by dfu-programmer.
+	* dfu-programmer.spec.in, Makefile.am, configure.ac:
+	  Moved the spec file into the fedora specific
+	  directory and excluded from the tar dist.
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.4.4 release
+
+2007-08-15 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* dfu-programmer.spec.in: Updating the license tag.
+
+2007-08-12 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* AUTHORS: added Anton Blad (for new devices) and Nick Hibma
+	  (for bug fixes) to the list of contributors.
+	* configure.ac: Incremented the release number
+	* docs/dfu-programmer.1: Added at90usb162 and at90usb82
+	  devices
+	* dfu-programmer.spec.in: Added the newly supported chips
+	* NEWS: Updated the latest news about the 0.4.3 release
+	* src/arguments.c, src/arguments.h: Applied the patch that
+	  Anton Blad provided to add support for the at90usb162
+	  and at90usb82.
+
+2007-07-22 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/atmel.c: Fix the incorrect status to string conversion
+	  that Nick Hibma found and pointed out.
+	* dfu-programmer.spec.in: Updating the file to be compliant
+	  with the Fedora requirements for packaging (again)
+
+2007-07-07 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.4.2 release
+	* dfu-programmer.spec.in: Updating the file to be compliant
+	  with the Fedora requirements for packaging
+
+2007-04-29 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.4.1 release
+
+2007-04-25 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* docs/dfu-programmer.1: Added a KNOWN ISSUES section,
+	  updated the BUGS section, and corrected the Free
+	  Software Foundation address.
+	* src/arguments.c: Adjusted the memory sizes for the at90
+	  series of chips so they can take advantage of the entire
+	  amount of flash memory.
+	* src/atmel.c, src/atmel.h: Add the concept and support for
+	  paged flash memory.  I added this so that only devices
+	  that actually go into paged memory will try to make calls
+	  to the memory paging routine.  I also did a bit of cleanup
+	  to allow a clean transition between the pages (so there
+	  are not regions of memory being flashed that overlap a
+	  flash memory page boundary).
+
+2007-03-28 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* m4/depcomp, m4/missing, src/dfu.c, src/intel_hex.c,
+	  src/commands.c, src/atmel.c, src/util.h, src/dfu.h,
+	  src/intel_hex.h, src/main.c, src/arguments.c,
+	  src/commands.h, src/atmel.h, src/arguments.h,
+	  src/util.c, COPYING: Updated the FSF address in the
+	  GPL license.
+
+2007-01-27 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.4.0 release
+	* src/arguments.c, src/arguments.h: add two fields to the
+	  chip configuration structures to handle the two
+	  inconsistencies in the dfu firmware - the at90 chips
+	  need to be aborted initially, and the at90 chips don't
+	  return valid interface class and subclass information.
+	  Originally, the interface problem was thought to be
+	  related to OS X, but it now looks like it is the chipset.
+	* src/dfu.c, src/dfu.h, src/main.c: add the handing of
+	  the new initial abort and interface class/subclass workarounds.
+
+2007-01-16 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/intel_hex.c: change the sscanf() parameter to an int
+	  from a char to be compliant with the sscanf() %x documentation
+	  stating that the output of %x is an int.
+
+2007-01-14 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/arguments.c: added the flash_page_size data and values
+	  to the data structure.  I checked to make sure that the
+	  flash page size is correct for all of the processors.
+	* src/arguments.h: added the flash_page_size data member to
+	  the programmer_arguments data structure.
+	* src/atmel.c: updated the atmel_flash() functionality so that
+	  only the memory pages that need to be flashed are flashed.
+	* src/atmel.h: updated the external interface for atmel_flash()
+	  to refelect the changes in src/atmel.c
+	* src/commands.c: changed the passing of the argument structure
+	  to be a pointer instead of the actual full structure.
+	  Updated the execute_flash() functionality to support the
+	  changes made in src/atmel.x.
+	* src/commands.h: updated the function prototype.
+	* src/intel_hex.c: changed the processing of the hex strutures
+	  to allow the support of only flashing the memory locations
+	  that are actually programmed.
+	* src/intel_hex.h: updated the function prototypes.
+	* src/main.c: pass the pointer to the argument structure instead
+	  of passing the entire structure.
+
+2007-01-07 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* AUTHORS: added Markus Schneider for his OS X contributions
+	* configure.ac: changed AC_CONFIG_HEADER to AM_CONFIG_HEADER
+	  to allow easier compiling on OS X.
+	* src/dfu.c: added a workaround for OS X because it was
+	  not finding devices since the DFU interface information
+	  is not being correctly reported.
+
+2007-01-06 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* config.h.in: added the autogenerated information from
+	  autoheader.
+	* configure.ac: added checking for errno.h stdarg.h and
+	  stddef.h to be more thorough in checking for required
+	  headers.
+	* src/dfu.c: added an #ifdef around the EREMOTEIO case
+	* src/intel_hex.c: refactored intel_read_data() to not
+	  use getline(), but to simply walk the file via fgets()
+	  and fgetc().  As it turns out, getline() wasn't really
+	  adding much value.
+
+2006-11-28 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/atmel.c: remove the dfu_make_idle() calls
+	* src/dfu.c: large changes to allow the dfu module to
+	  discover and acquire the usb device.  This change was
+	  required to allow the dfu module to try to transition
+	  a USB device from its runtime mode into its DFU mode.
+	  Part of this transition requires resetting, re-enumerating,
+	  and re-acquiring the device.  All of this was not possible
+	  before because the main function held onto the device
+	  and it's handle.  Additionally, when acquiring the device
+	  for the first time, the dfu module tries to put the device
+	  into the correct state, instead of punting this process
+	  to the later steps, when it is impossible to recover from.
+	  Finally, the variables named "device" were changed to be
+	  "handle" since that's what they really are and there are
+	  references to the actual "device" structure in dfu.c now.
+	* src/dfu.h: updated the prototypes to reflect the changes in
+	  dfu.c.
+	* src/main.c: remove the dfu_make_idle() calls and simplify
+	  the main function since most of the work is now being done
+	  in dfu.c.  Additionally, move the device discovery to dfu.c
+
+2006-11-19 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/atmel.c: Added the dfu_make_idle() call before
+	  operations that communicate with the device being flashed.
+	  This should make the communications more reliable as it
+	  puts the device in a known state.  Additionally, I added
+	  some better error messages in the hopes that it will be
+	  easier to diagnose the problem when commands to the
+	  device fail.  Finally, I adjusted the return code checking
+	  for dfu_get_statue() to reflect the new interface of 0 for
+	  success or < 0 for errors.
+	* src/commands.c: I fixed a poor error message.
+	* src/dfu.c: I updated the dfu_get_status() function to simply
+	  return 0 on a success, or < 0 on an error.  I added
+	  dfu_make_idle() to allow the device to be put in a known
+	  state or to force an early bailout.
+	* src/dfu.h: dfu_make_idle() is publically available.
+
+2006-11-19 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/dfu.c: Added a DFU status to string conversion method
+	  and when debug is enabled, dfu_get_status() shows both the
+	  string and the number for the status.
+	* src/dfu.h: the dfu_status_to_string() is made publically
+	  available.
+
+2006-11-15 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/atmel.c: Remove the init function since it is no longer
+	  needed.  This re-works the debug message support so there is
+	  a simple macro DEBUG() that takes care of all the work.
+	  Additionally, this fixes an erasing problem where when the
+	  entire chip was supposed to be erased, it was not.  This
+	  could cause problems because when the security bits are set,
+	  they could never be unset.
+	* src/atmel.h: Remove the init function since it is no longer
+	  needed.
+	* src/commands.c: This re-works the debug message support so
+	  there is a simple macro DEBUG() that takes care of all the
+	  work.
+	* src/dfu.c: This re-works the debug message support so there
+	  is a simple macro DEBUG() that takes care of all the work.
+	  Additionally, there is no reason to have the init function
+	  since we are going to use the one external debug variable.
+	  This normalized all of the functions so they produce useful
+	  information when debug messages are enabled.  Finally, this
+	  adds an error number to message converter so that tracking
+	  down errors is a bit easier.
+	* src/dfu.h: Remove the init & debug functions.
+	* src/main.c: Adjust the level needed to turn the libusb
+	  debugging messages on.  Removed the atmel_init() call.
+	* src/Makefile.am: Added util.c and util.h to be built.
+	* src/util.c: Added the dfu_debug() function in a common
+	  location.
+	* src/util.h: Added the dfu_debug() function in a common
+	  location.
+
+2006-10-21 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* dfu-programmer.spec.in: This resolves several of the problems
+	  present in the spec file.  The goal is to be able to make this
+	  package part of the fedora extras.
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.3.1 release
+	* docs/dfu-programmer.1: Update the SEE ALSO section, AUTHOR
+	  section and added the copyright information.
+
+2006-06-24 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* dfu-programmer.spec.in: Update the supported chips
+	* NEWS: Updated the latest news about the 0.3.0 release
+	* src/arguments.c: Adjusted the 8051 based chip memory sizes to
+	  be accurate, and the top memory address is calculated based off
+	  of the memory size.
+	* src/arguments.h: Added top_memory_address to differentiate the
+	  memory size and top memory address.  This resolves my question
+	  about the +1 offset.
+	* src/atmel.c: Fix a bug where the last byte of memory was not being
+	  transferred from the device for validation purposes.
+	* src/commands.c: Updated to use memory_size and top_memory_address
+	  depending on which value is needed, instead of using one value
+	  to serve both purposes.
+
+2006-06-24 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* dfu-programmer.spec.in: Update the supported chips
+	* README: Added an instruction about building the source from CVS.
+
+2006-06-19 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* AUTHORS: Updated David Brownell's contributions - which makes
+	  up almost this entire check-in!
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.3.0 release
+	* src/arguments.c: Added the new targets, made the target names
+	  case insensitive, added a version command line "command", updated
+	  the mechanism for matching commands, and updated debugging output.
+	* src/arguments.h: Added new targets, and cleaned the arguments
+	  structure up a bit.
+	* src/atmel.c: Applied general cleanup, matched the atmel.h
+	  interfaces and added an AVR a configuration reading function.
+	* src/atmel.h: Updated the interface to allow for 8051 vs AVR
+	  differences.  This also starts the use of stdint.h values.
+	* src/commands.c: Updated to a more standard debugging system and
+	  added command checking for 8051 vs AVR differences.  There is
+	  an open question about why we switch between args.memory_size
+	  and args.memory_size+1 in comparisons.  I need to re-read up
+	  on why in the world I did args.memory_size+1 in the first
+	  place, then follow up with David about implications around
+	  the AVR chips.
+	* src/dfu.c: Updated to a more standard debugging system and
+	  removed an overly verbose debug message.
+	* src/intel_hex.c: Added comments about the record types, and
+	  added 20 bit address types for the larger amount of addressable
+	  flash memory.
+	* src/main.c: Updated to a more standard debugging system,
+	  updated the failure messages to include the package information.
+	* README: Updated description and list of supported chips
+
+2006-06-18 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* AUTHORS: Added David Brownell as a contributor.
+	* configure: Removed because it is generated by bootstrap.sh
+	* Makefile.in: Removed because it is generated
+	* docs/Makefile.in: Removed because it is generated
+	* src/Makefile.in: Removed because it is generated
+	* src/Makefile.am: Applied David Brownell's patch that adds -Wall
+	  as a compiler option.
+
+2005-05-07 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* AUTHORS: Updated my email address
+	* configure.ac: Incremented the release number
+	* dfu-programmer.spec.in: Update the release to Fedora Core 5
+	* NEWS: Updated the latest news about the 0.2.2 release
+	* src/main.c: Fix the failure cases so that if the USB interface was
+	  not acquired then it is not errantly released.
+
+2005-11-21 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.2.1 release
+
+2005-11-21 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* docs/dfu-programmer.1: Bring the man page in-line with the
+	  built in help, plus a bit more info.
+
+2005-11-21 Weston Schmidt <weston_schmidt AT alumni.purdue.edu>
+
+	* src/main.c: Two minor fixes to allow it to work with newer 2.6.xx
+	  kernels.  The first had to do with using a function call to get
+	  the buses to iterate over, and the second has to do with not
+	  setting a configuration.  Apparently this doesn't need to be done.
+
+2005-09-24 Weston Schmidt <weston_schmidt AT yahoo.com>
+
+	* configure.ac: Incremented the release number
+	* NEWS: Updated the latest news about the 0.2.0 release
+	* src/commands.c: Removed the hard-coded restrictions on sizes and
+	  instead malloc the space needed.  Additionally the size is gotten
+	  from the arguments data structure, so that adding future devices
+	  should be easier.
+	* src/arguments.h: Added memory_size to the programmer_arguments
+	  data structure.  Restructured the targets_enum so that it can
+	  be used as keys into the target_map data structure for target
+	  to name resolution without needing to duplicate data.
+	* src/arguments.c: Made the changes needed to take advantage of the
+	  memory size restructuring and changed the usage() function to
+	  use iteration instead of duplication to display supported chips
+
+2005-09-24 Weston Schmidt <weston_schmidt AT yahoo.com>
+
+	* src/{*.c,*.h}, AUTHORS: removed the copyright information from the
+	  file so that the AUTHORS file can manage this information for the
+	  entire project
+
+2005-09-24 Weston Schmidt <weston_schmidt AT yahoo.com>
+
+	* src/{arguments.c,arguments.h,atmel.c,commands.c}: applied
+	  Reinhard Arlt's patch that adds support for the at89c5131 chip

@@ -1,0 +1,27 @@
+#! /usr/bin/perl -w
+
+open (FILE, "</System/Library/CoreServices/SystemVersion.plist") or exit 112;
+
+my $nextline = 0;
+my $version = "";
+while (my $line = <FILE>) {
+    next unless $line =~ m/<\w*>(.*)<.\w*>/;
+    if ($nextline) {
+	$version = $1;
+	$nextline = 0;
+    }
+    if ($1 eq "ProductVersion") {
+        $nextline = 1;
+    }
+}
+close FILE;
+
+my ($vermajor, $verminor) = split(/\./, $version);
+
+my $target = "10.7";
+
+my ($targetmajor, $targetminor) = split(/\./, $target);
+
+exit 113 if ($vermajor != $targetmajor or $verminor != $targetminor);
+
+exit 0;
