@@ -1,3 +1,9 @@
+REM This is a batch file to automate the process of making
+REM  an easy-to-download copy of the Windows UnoJoy! files.
+REM  It only works on Windows, and requires that you have
+REM  7-Zip installed on your system. If you don't have 7-Zip,
+REM  well, you should go do that.
+
 @echo off
 set archiveName=UnoJoyWin-%date:~-10,2%-%date:~-7,2%-%date:~-4,4%.zip
 if exist "UnoJoy/UnoJoy.h" (
@@ -25,12 +31,15 @@ if exist "UnoJoy/UnoJoy.h" (
   copy /y "UnoJoy\UnoJoy.h" "UnoJoyWin/UnoJoy.h" 
   copy /y "Drivers\UnoJoyDriverInstaller.bat" "UnoJoyWin/UnoJoyDriverInstaller.bat" 
   
+  REM Zip up all the files
   7z a %archiveName% "UnoJoyWin"
+  
+  REM Delete the files, now that we've got them in a zip file
+  rmdir UnoJoyWin /s /q
   
 ) else (
   echo Didn't find UnoJoy...
   echo Make sure you are running this file from the root of your UnoJoy directory
 )
 echo Press any key to exit...
-echo %archiveName%
 pause > nul
