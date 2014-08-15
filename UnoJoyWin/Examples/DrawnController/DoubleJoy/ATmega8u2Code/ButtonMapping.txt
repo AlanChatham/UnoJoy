@@ -1,0 +1,27 @@
+/*
+ * This file is a quick reference to what
+ *  buttons correspond to what between the
+ *  PS3 and the Windows dialog
+ */ 
+
+
+ Windows : PS3
+ 1  : Square
+ 2  : Cross
+ 3  : Circle
+ 4  : Triangle
+ 5  : L1
+ 6  : R1
+ 7  : L2
+ 8  : R2
+ 9  : Select
+ 10 : Start
+ 11 : L3
+ 12 : R3
+ 13 : Home
+
+ Hat Switch : D-Pad
+
+ X/Y Axis : Left Stick X/Y
+ Z Axis: Right Stick X
+ Z Rotation: Right Stick Y

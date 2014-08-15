@@ -1,0 +1,54 @@
+
+Intro:
+    The dfu-programmer is a Device Firmware Update based USB programmer for
+Atmel chips with a USB programmer. Its function is comparable to the flip
+programming interface, though arguably easier to use. More information ond 
+the dfu-programmer can be found at:
+     http://dfu-programmer.sourceforge.net/
+
+The dfu programmer is dependent on libusb (version 1.0.8 with this install)
+and libusb-compat (version 0.1.3 with this install). See the libusb site 
+for more details:
+    http://www.libusb.org/
+
+If you are using Mac OSX:
+   You will want to install CrossPack at:
+      http://www.obdev.at/products/crosspack
+
+If you are using Linux:
+   You will want to install AvrDude
+      http://www.bsdhome.com/avrdude/  note: I have yet to test this
+
+Installation:
+
+   - In Terminal navigate to your dfu_programmer_install directory.
+   - Type: ./install_dfu_programmer
+   - This executes the install.
+   - You will be prompted for you password. Type in your password.
+   - If the install is sucessful you should see the dfu-programmer
+     manual
+   - press 'q' to exit the manual. 
+
+Testing:
+   - Plug in your Maevarm
+   - Switch to load
+   - In terminal:
+     - Type: sudo dfu-programmer atmega32u4 erase
+     - Then: sudo dfu-programmer atmega32u4 dump-user
+   - You should see a bunch of question marks.
+
+Compiling and Programming:
+   The 'test' directory instide the dfu_programmer_install directory
+   contains a defaul Makefile and main.c file written by Jonathan
+   Bohren.
+   - With the Maevarm plugged in and switched into load mode
+   - Navigate to the 'test' directory
+   - Type: make
+        You should see something like:
+          avr-gcc -Wall -0s - DF_CPU_8000000 -mmcu-atmega32u4 -c main.c -o main.o
+   - Type: make flash
+       You should see some messages indicating the success or failure of the 
+       programming process.
+
+Running:
+   Switch out of programming mode and press the reset butten.

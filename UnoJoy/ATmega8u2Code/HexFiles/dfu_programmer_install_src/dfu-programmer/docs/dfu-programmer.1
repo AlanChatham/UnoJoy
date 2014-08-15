@@ -1,0 +1,207 @@
+.TH DFU\-PROGRAMMER 1 "December 10, 2008" "DFU\-PROGRAMMER" ""
+.SH NAME
+dfu\-programmer \- USB firmware upgrading for Atmel microcontrollers
+.nh
+.SH SYNOPSIS
+.B dfu\-programmer
+target command [options] [parameters]
+.SH DESCRIPTION
+.B dfu\-programmer
+is a Linux command line Device Firmware Upgrade (DFU) based programmer
+for the flash memory on Atmel AVR, AVR32 and 8051 based microcontrollers
+which ship with a USB boot loader. 
+It supports In System Programming (ISP) for developers and potentially
+product updates in the field.
+Those boot loaders are patterned after the standard USB DFU 1.0 class
+specification, but depend on extensions defined by Atmel to the extent
+that standard DFU drivers will not work.
+.PP
+To use it, first connect the device to be programmed and ensure that it
+comes up in DFU mode.
+The microcontrollers come up in that mode as shipped by Atmel;
+or they may reenter that mode after a special hardware reset.
+Then invoke this program to issue one or more DFU commands.
+You will normally need to start by issuing the "erase" command;
+the default security policies prevent extracting firmware, to prevent
+reverse engineering of what is usually proprietary code.
+.SH SUPPORTED MICROCONTROLLERS 
+These chip names are used as the command line "target" parameter.
+.IP "8051 based controllers:"
+at89c51snd1c, at89c51snd2c, at89c5130, at89c5131, and at89c5132.
+.IP "AVR based controllers:"
+at90usb1287, at90usb1286, at90usb647, at90usb646, at90usb162,
+at90usb82, atmega32u6, atmega32u2, atmega32u4, and atmega16u4.
+.IP "AVR32 based controllers:"
+at32uc3a0128, at32uc3a1128, at32uc3a0256, at32uc3a1256,
+at32uc3a0512, at32uc3a1512, at32uc3a0512es, at32uc3a1512es,
+at32uc3a364, at32uc3a364s, at32uc3a3128, at32uc3a3128s,
+at32uc3a3256, at32uc3a3256s, at32uc3b064, at32uc3b164,
+at32uc3b0128, at32uc3b1128, at32uc3b0256, at32uc3b1256,
+at32uc3b0256es, at32uc3b1256es, at32uc3b1512, and at32uc3b0512.
+.SH USAGE
+There are no mechanisms for selecting which single device
+should be programmed, or to implement gang programming.
+Accordingly, you will usually avoid connecting more than one
+device of a given family (AVR, AVR32 or 8051) at a time.
+.PP
+All of these commands support the "global options".
+Unless you override it,
+commands which write to the microcontroller will perform 
+a validation step that rereads the data which was written,
+compares it to the expected result, and reports any errors.
+.HP
+.B configure
+register
+[\-\-suppress\-validation]
+data
+.br
+Bootloaders for 8051 based controllers support writing certain
+configuration bytes.
+.HP
+.B dump
+.br
+Reads all the available flash memory, and writes it as binary
+data to stdout.
+.HP
+.B dump-eeprom
+.br
+Reads all the available eeprom memory, and writes it as binary
+data to stdout.
+.HP
+.B dump-user
+.br
+Reads the user space flash on the AVR32 chips and writes it as binary
+data to stdout.
+.HP
+.B erase
+[\-\-suppress\-validation]
+.br
+Erases all the flash memory.
+This is required before the bootloader will perform other commands.
+.HP
+.B flash
+[\-\-suppress\-validation]
+[\-\-suppress\-bootloader\-mem]
+file or STDIN
+.br
+Writes flash memory.  The input file (or stdin) must use the "ihex" file
+format convention for a memory image. \-\-suppress\-bootloader\-mem
+ignores any data written to the bootloader memory space when flashing
+the device.  This option is particularly useful for the AVR32 chips
+.B trampoline
+code.
+.HP
+.B flash-user
+[\-\-suppress\-validation]
+file or STDIN
+.br
+Writes to user space flash on the AVR32 chips.  This block of flash
+is out of the normal range of flash blocks and is designed to contain
+configuration parameters.  The input file (or stdin) mus use the "ihex"
+file format convention for a memory image.
+.HP
+.B eeprom-flash
+[\-\-suppress\-validation]
+file or STDIN
+.br
+Writes to eeprom memory.  The input file (or stdin) must use the "ihex"
+file format convention for a memory image.
+.HP
+.B get
+register
+.br
+Displays various product identifier bytes.
+.HP
+.B reset
+.br
+Resets microcontroller using watchdog timer
+.HP
+.B start
+.br
+Starts the application firmware by having the microcontroller
+jump to address zero.
+.HP
+.B version
+.br
+This prints a string identifying the version of this utility.
+.SS Global Options
+\-\-quiet \- minimizes the output
+
+\-\-debug level \- enables verbose output at the specified level
+.SS Configure Registers
+The standard bootloader for 8051 based chips supports writing
+data bytes which are not relevant for the AVR based chips.
+.LP
+BSB \- boot status byte
+.br
+SBV \- software boot vector
+.br
+SSB \- software security byte
+.br
+EB  \- extra byte
+.br
+HSB \- hardware security byte
+.SS Get Register
+bootloader\-version \- currently flashed bootloader version
+.br
+ID1 \- device boot identification 1
+.br
+ID2 \- device boot identification 2
+.br
+manufacturer \- the hardware manufacturer code
+.br
+family \- the product family code
+.br
+product\-name \- the product name
+.br
+product\-revision \- the product revision
+.br
+HSB \- same as the configure_register version
+.br
+BSB \- same as the configure_register version
+.br
+SBV \- same as the configure_register version
+.br
+SSB \- same as the configure_register version
+.br
+EB  \- same as the configure_register version
+.SH BUGS
+None known.
+.SH KNOWN ISSUES
+The at90usb series chips do not make available any read/write protect
+flags so the
+.B dump
+or
+.B flash
+command may fail with a less than helpful error message.
+.PP
+To remove
+.B any
+write or read protection from any chips, a full chip erasure is required.
+.PP
+You may need to be a member of the
+.B uucp
+group in order to have access to the device without needing to be root.
+.SH AUTHOR
+Weston Schmidt <weston_schmidt@alumni.purdue.edu>
+.SH SEE ALSO
+.UR dfu-programmer.sourceforge.net
+http://dfu-programmer.sourceforge.net
+.UR AVR32 UC3 USB DFU Bootloader
+http://atmel.com/dyn/resources/prod_documents/doc7745.pdf
+.SH COPYRIGHT
+Copyright (C) 2005-2008 Weston Schmidt
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA

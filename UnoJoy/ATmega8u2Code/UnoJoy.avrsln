@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "UnoJoy", "UnoJoy.avrgccproj", "{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		HexFiles|AVR = HexFiles|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.HexFiles|AVR.ActiveCfg = HexFiles|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.HexFiles|AVR.Build.0 = HexFiles|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Release|AVR.ActiveCfg = Release|AVR
+		{6974E705-4DBA-49AB-8AB5-42EA03CD49C4}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,59 @@
+Release 0.5.2
+* Added ability to read from STDIN.
+* Added ability to configure AVR32 fuses.
+* Applied a number of bug fixes.
+* Fixed AVR device support.
+Release 0.5.1
+* Applied patch that fixes AVR32 support so that the trampoline code
+  can be used.
+Release 0.5.0
+* All known Atmel USB AVR/8051/AVR32 chips are now supported.
+* A number of cross platform friendly code changes have been added.
+Release 0.4.6
+* Minor release changes - focused on changing the permission handling.
+  code for fedora
+* This is the last planned 0.4.x release.  The next release will be
+  0.5.0 and will be focused on better cross platform support (for
+  windows, etc) in addition to new chips.
+Release 0.4.5
+* Added support for 4K bootloaders on supported chips.
+* Added support for eeprom-dump and eeprom-flash on supported chips.
+Release 0.4.4
+* Added new reset command
+* Added out of the box permission changes to allow the console owner
+  to flash a device without needing to be root.
+Release 0.4.3
+* Added support for the at90usb162 and at90usb82 chips.
+* Applied patch for incorrect status string conversion.
+Release 0.4.2
+* Minor spec file changes to be Fedora compliant
+Release 0.4.1
+* Added support for flashing both memory pages for the at90usb128x
+  chips.
+* Updated the man page.
+Release 0.4.0
+* Major set of fixes added for the at90xxx chips.
+* Optimized the flashing algorithm that only flashes the blocks needed
+  based on the data being flashed, instead of flashing the entire chip
+  each time (potentially saves s good deal of time during development)
+* The chip should be initialized better than before, increasing the
+  likelihood of a successful operation.
+* Refined the code to allow OS X to compile and run dfu-programmer.
+Release 0.3.1
+* Minor documentation changes and polishing of the spec file to get the
+  project inline with what is needed to be part of the fedora extras.
+Release 0.3.0
+* Added support for (AVR) at90usb1287, at90usb1286, at90usb647, at90usb646
+  chips.
+* Fixes a minor validation bug where the last byte of flash was not being
+  correctly validated.
+Release 0.2.2
+* Minor bug fix for a segmentation fault if only the usage is displayed.
+Release 0.2.1
+* Minor bug fixes and documentation updates.
+Release 0.2
+* Limited support for the at89c5132, at89c5131 and at89c5130 chip is added.
+  where the known limitations now have to do with P1_CF, P3_CF, P4_CF not
+  being supported (read or write).
+Release 0.1
+* Initial release
