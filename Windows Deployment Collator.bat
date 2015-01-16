@@ -11,31 +11,39 @@ if exist "UnoJoy/UnoJoy.h" (
   echo.
   echo Collecting Windows files..
   REM Don't add in the OSX dfu-programmer files
-  xcopy /i /y "UnoJoy\ATmega8u2Code\HexFiles\*.hex" "UnoJoyWin\ATmega8u2Code\HexFiles"
-  xcopy /i /y "UnoJoy\ATmega8u2Code\HexFiles\*.exe" "UnoJoyWin\ATmega8u2Code\HexFiles"
+  xcopy /i /y "UnoJoy\ATmega8u2Code\HexFiles\*.hex" "temp\UnoJoy\ATmega8u2Code\HexFiles"
+  xcopy /i /y "UnoJoy\ATmega8u2Code\HexFiles\*.exe" "temp\UnoJoy\ATmega8u2Code\HexFiles"
   
-  xcopy /i /y "UnoJoy/ATmega8u2Code" "UnoJoyWin/ATmega8u2Code"
-  xcopy /i /y /s "Drivers/Windows" "UnoJoyWin/Drivers/Windows"
-  xcopy /i /y /s "UnoJoy/Examples" "UnoJoyWin/Examples"
-  xcopy /i /y /s "UnoJoy/UnoJoyArduinoSample" "UnoJoyWin/UnoJoyArduinoSample"
+  xcopy /i /y "UnoJoy/ATmega8u2Code" "temp/UnoJoy/ATmega8u2Code"
+  xcopy /i /y /s "Drivers/Windows" "temp/UnoJoy/Drivers/Windows"
+  xcopy /i /y /s "UnoJoy/Examples" "temp/UnoJoy/Examples"
+  xcopy /i /y /s "UnoJoy/UnoJoyArduinoSample" "temp/UnoJoy/UnoJoyArduinoSample"
   
   REM Don't add in the OSX visualizer files
-  xcopy /i /y "UnoJoy/UnoJoyProcessingVisualizer/data" "UnoJoyWin/UnoJoyProcessingVisualizer/data"
-  xcopy /i /y "UnoJoy/UnoJoyProcessingVisualizer/lib" "UnoJoyWin/UnoJoyProcessingVisualizer/lib"
-  xcopy /i /y "UnoJoy/UnoJoyProcessingVisualizer" "UnoJoyWin/UnoJoyProcessingVisualizer"
+  xcopy /i /y "UnoJoy/UnoJoyProcessingVisualizer/data" "temp/UnoJoy/UnoJoyProcessingVisualizer/data"
+  xcopy /i /y "UnoJoy/UnoJoyProcessingVisualizer/lib" "temp/UnoJoy/UnoJoyProcessingVisualizer/lib"
+  xcopy /i /y "UnoJoy/UnoJoyProcessingVisualizer" "temp/UnoJoy/UnoJoyProcessingVisualizer"
   
   REM Only take the Windows root files
-  copy /y "README.md" "UnoJoyWin/README.txt" 
-  copy /y "UnoJoy\TurnIntoAJoystick.bat" "UnoJoyWin/TurnIntoAJoystick.bat" 
-  copy /y "UnoJoy\TurnIntoAnArduino.bat" "UnoJoyWin/TurnIntoAnArduino.bat" 
-  copy /y "UnoJoy\UnoJoy.h" "UnoJoyWin/UnoJoy.h" 
-  copy /y "Drivers\UnoJoyDriverInstaller.bat" "UnoJoyWin/UnoJoyDriverInstaller.bat" 
+  copy /y "README.md" "temp/UnoJoy/README.txt" 
+  copy /y "UnoJoy\TurnIntoAJoystick.bat" "temp/UnoJoy/TurnIntoAJoystick.bat" 
+  copy /y "UnoJoy\TurnIntoAnArduino.bat" "temp/UnoJoy/TurnIntoAnArduino.bat" 
+  copy /y "UnoJoy\UnoJoy.h" "temp/UnoJoy/UnoJoy.h" 
+  echo "stuff"
+  copy /y "Drivers\UnoJoyDriverInstaller.bat" "temp/UnoJoy/UnoJoyDriverInstaller.bat"  
+  
+  REM Move up a directory
+  cd temp/
   
   REM Zip up all the files
-  7z a %archiveName% "UnoJoyWin"
+  7z a "archive.zip" "UnoJoy" -o/../..
+  
+  cd ..
+  
+  copy /y "temp\archive.zip" %archiveName%
   
   REM Delete the files, now that we've got them in a zip file
-  rmdir UnoJoyWin /s /q
+  rmdir temp /s /q
   
 ) else (
   echo Didn't find UnoJoy...
