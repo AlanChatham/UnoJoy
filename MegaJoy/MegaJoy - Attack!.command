@@ -6,10 +6,10 @@ echo # New Line
 cd ATmega8u2Code/HexFiles
 if test -e ./dfu-programmer; then
   echo "Trying to program for Arduino Uno R1/R2..."
-  ./dfu-programmer at90usb82 flash UnoJoy.hex
+  ./dfu-programmer at90usb82 flash MegaJoy.hex
   if test $? != 0; then
     echo "We didn't find the R1/R2 model, checking for an R3..."
-    ./dfu-programmer atmega16u2 flash UnoJoy.hex
+    ./dfu-programmer atmega16u2 flash MegaJoy.hex
     if test $? != 0; then
       echo # New line
       echo "dfu-programmer couldn't connect to the Arduino..."
