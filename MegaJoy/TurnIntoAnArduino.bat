@@ -9,9 +9,9 @@ goto EXIT
 echo.
 echo Like magic.
 cd ATmega8u2Code/HexFiles
-echo Attempting to re-flash for an Arduino Uno R1/R2
+echo Attempting to re-flash for an Arduino Mega 2560 R1/R2
 @echo on
-batchisp -device at90usb82 -hardware usb -operation erase f memory flash blankcheck loadbuffer "Arduino-usbserial-uno.hex" program verify start reset 0
+batchisp -device at90usb82 -hardware usb -operation erase f memory flash blankcheck loadbuffer "Arduino-usbserial-mega.hex" program verify start reset 0
 @echo off
 if %errorlevel% NEQ 0 (
     goto R3FLASH
@@ -21,9 +21,9 @@ else (
 )
 
 :R3FLASH
-echo Trying to re-flash for an Arduino Uno R3
+echo Trying to re-flash for an Arduino Mega 2560 R3
 @echo on
-batchisp -device atmega16u2 -hardware usb -operation erase f memory flash blankcheck loadbuffer "Arduino-usbserial-uno.hex" program verify start reset 0
+batchisp -device atmega16u2 -hardware usb -operation erase f memory flash blankcheck loadbuffer "Arduino-usbserial-mega.hex" program verify start reset 0
 @echo off
 if %errorlevel% NEQ 0 (
     echo %errorlevel%
@@ -31,7 +31,7 @@ if %errorlevel% NEQ 0 (
     echo.
     echo Did you install the Atmel FLIP program? - http://www.atmel.com/tools/FLIP.aspx -
     echo Is the Arduino plugged in?
-    echo Is is it in 'Arduino UNO DFU' mode?
+    echo Is is it in 'Arduino MEGA DFU' mode?
     echo Press any key to exit..
     goto EXIT
 ) else (
