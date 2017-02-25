@@ -1,15 +1,15 @@
 #!/bin/bash
 echo .
-echo Abracadabra!
+echo Like magic.
 cd ATmega8u2Code/HexFiles
 echo Trying to program for Arduino Uno R1/R2...
-dfu-programmer at90usb82 flash UnoJoy.hex
+dfu-programmer at90usb82 flash Arduino-usbserial-mega.hex
 
 if [ $? = 127 ]; then
 	echo "Seems like the dfu-programmer is not installed. You can install it by typing: sudo apt install dfu-programmer"
 elif [ $? != 0 ]; then
 	echo "We didn't find the R1/R2 model, checking for an R3..."
-	dfu-programmer atmega16u2 flash Arduino-usbserial-uno.hex
+	dfu-programmer atmega16u2 flash Arduino-usbserial-mega.hex
 	if [ $? != 0 ]; then
 		echo
 		echo "dfu-programmer couldn't connect to the Arduino..."
@@ -17,9 +17,9 @@ elif [ $? != 0 ]; then
 		echo "Did you run the script as a root user?"
 	else
 		echo
-		echo "Unplug your Arduino and plug it back in. It's a joystick now!"
+		echo "Unplug your Arduino and plug it back in. It's back to being an Arduino now!"
 	fi
 else
 	echo
-	echo "Unplug your Arduino and plug it back in. It's a joystick now!"
+	echo "Unplug your Arduino and plug it back in. It's back to being an Arduino now!"
 fi
