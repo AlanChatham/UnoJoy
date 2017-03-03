@@ -39,6 +39,9 @@ Getting Started
 	sudo aptitude install dfu-programmer 
 	depending on your distribution.
 	You can also build it from source: https://github.com/dfu-programmer/dfu-programmer
+	You also have to make the flashing script runnable by typing:
+	chmod +x TurnIntoAJoystick.sh
+	into your terminal when in UnoJoy directory.
 
 
 	Software
@@ -128,5 +131,5 @@ Getting Started
 		From there you should find:
 		In Arduino mode, you should see  a device named Arduino Uno etc.
 		In DFU mode, you should see  a device named Atmel corp. etc.
-		In UnoJoy mode, you should see a device named UnoJoy Joystick
+		In UnoJoy mode, you should see a device named Cygnal Integrated Products etc.
 

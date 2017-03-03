@@ -5,9 +5,11 @@ cd ATmega8u2Code/HexFiles
 echo Trying to program for Arduino Uno R1/R2...
 dfu-programmer at90usb82 flash MegaJoy.hex
 
-if [ $? = 127 ]; then
+exit_code=$?
+
+if [ $exit_code = 127 ]; then
 	echo "Seems like the dfu-programmer is not installed. You can install it by typing: sudo apt install dfu-programmer"
-elif [ $? != 0 ]; then
+elif [ $exit_code != 0 ]; then
 	echo "We didn't find the R1/R2 model, checking for an R3..."
 	dfu-programmer atmega16u2 flash MegaJoy.hex
 	if [ $? != 0 ]; then
