@@ -33,6 +33,16 @@ Getting Started
 	On Windows, you'll also need to download and install Atmel's FLIP tool:
 	http://www.atmel.com/tools/FLIP.aspx
 
+	On Linux you'll need to install dfu-programmer. you can get it by typing to your terminal:
+	sudo apt-get install dfu-programmer
+	or
+	sudo aptitude install dfu-programmer 
+	depending on your distribution.
+	You can also build it from source: https://github.com/dfu-programmer/dfu-programmer
+	You also have to make the flashing script runnable by typing:
+	chmod +x TurnIntoAJoystick.sh
+	into your terminal when in UnoJoy directory.
+
 
 	Software
 	========
@@ -87,6 +97,8 @@ Getting Started
 	Windows: TurnIntoAJoystick.bat
 			 
 	OSX:     TurnIntoAJoystick.command
+	
+	Linux:   ./TurnIntoAJoystic.sh
 
 	IMPORTANT: Once you update the firmware, you'll need to 
 	unplug and plug the Arduino back in for it to show up with
@@ -113,4 +125,11 @@ Getting Started
 		In Arduino mode, it will appear as 'Arduino UNO'
 		In DFU mode, it will appear as 'Arduino UNO DFU'
 		In UnoJoy mode, it will appear at the top as 'UnoJoy Joystick'
+	
+	On Linux, you can type lsusb to your terminal.
+		In response you'll get list of all connected usb devices.
+		From there you should find:
+		In Arduino mode, you should see  a device named Arduino Uno etc.
+		In DFU mode, you should see  a device named Atmel corp. etc.
+		In UnoJoy mode, you should see a device named Cygnal Integrated Products etc.
 
