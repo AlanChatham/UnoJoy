@@ -31,7 +31,7 @@ Getting Started
 	SnowLeopardUnoJoyDrivers.pkg
 
 	On Windows, you'll also need to download and install Atmel's FLIP tool:
-	http://www.atmel.com/tools/FLIP.aspx
+	http://www.microchip.com/developmenttools/productdetails.aspx?partno=flip
 
 	On Linux you'll need to install dfu-programmer. you can get it by typing to your terminal:
 	sudo apt-get install dfu-programmer
