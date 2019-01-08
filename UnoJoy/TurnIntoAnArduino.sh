@@ -12,7 +12,7 @@ if [ $exit_code = 127 ]; then
 elif [ $exit_code != 0 ]; then
 	echo "We didn't find the R1/R2 model, checking for an R3..."
 	dfu-programmer atmega16u2 flash Arduino-usbserial-uno.hex
-	if [ $exit_code != 0 ]; then
+	if [ $? != 0 ]; then
 		echo
 		echo "dfu-programmer couldn't connect to the Arduino..."
 		echo "Did you put the Arduino into DFU mode?"
