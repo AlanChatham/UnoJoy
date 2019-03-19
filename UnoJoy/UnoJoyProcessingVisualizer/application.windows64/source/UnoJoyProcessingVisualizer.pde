@@ -1,3 +1,5 @@
+
+
 /* Code for UnoJoy Processing Visualizer
 
     Wouter Walmink + Alan Chatham
@@ -8,6 +10,8 @@
     http://forum.processing.org/topic/simple-code-create-a-drop-down-list-with-available-com-ports
 */
 import processing.serial.*;
+import controlP5.*;
+
 // Dropdown menu stuff
 ControlP5 controlP5;             //Define the variable controlP5 as a ControlP5 type.
 DropdownList ports;              //Define the variable ports as a Dropdownlist.
@@ -126,7 +130,7 @@ void controlEvent(ControlEvent theEvent) {
   if (theEvent.isGroup()) 
   {
     //Store the value of which box was selected, we will use this to acces a string (char array).
-    float S = theEvent.group().value();
+    float S = theEvent.group().getValue();
     //Since the list returns a float, we need to convert it to an int. For that we us the int() function.
     Ss = int(S);
     //With this code, its a one time setup, so we state that the selection of port has been done. You could modify the code to stop the serial connection and establish a new one.
@@ -153,15 +157,15 @@ void customize(DropdownList ddl) {
   //Set the height of the bar itself.
   ddl.setBarHeight(15);
   //Set the lable of the bar when nothing is selected.
-  ddl.captionLabel().set("Select COM port");
+  //ddl.setCaptionLabel("Select COM port");
   //Set the top margin of the lable.
-  ddl.captionLabel().style().marginTop = 3;
+  //ddl.captionLabel().style().marginTop = 3;
   //Set the left margin of the lable.
-  ddl.captionLabel().style().marginLeft = 3;
+  //ddl.captionLabel().style().marginLeft = 3;
   //Set the top margin of the value selected.
-  ddl.valueLabel().style().marginTop = 3;
+  //ddl.valueLabel().style().marginTop = 3;
   //Store the Serial ports in the string comList (char array).
-  comList = SerialPort.list();
+  comList = Serial.list();
   if (Serial.list().length == 0)
     return;
   //We need to know how many ports there are, to know how many items to add to the list, so we will convert it to a String object (part of a class).
@@ -376,6 +380,7 @@ void readController(){
   // Wait 25ms to get in data, or make these buttons zeroes
   rightStickData.x = readSerialPort(25, 128);
   
+  SerialPort.write(6);
   // Wait 25ms to get in data, or make these buttons zeroes
   rightStickData.y = readSerialPort(25, 128);
   
@@ -451,5 +456,3 @@ void turnAllOff(){
   dpadRightOn = 0;
   dpadDownOn = 0;
 }
-
-

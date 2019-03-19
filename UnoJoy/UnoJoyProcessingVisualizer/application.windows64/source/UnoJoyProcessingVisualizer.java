@@ -4,6 +4,7 @@ import processing.event.*;
 import processing.opengl.*; 
 
 import processing.serial.*; 
+import controlP5.*; 
 
 import controlP5.*; 
 
@@ -18,6 +19,8 @@ import java.io.IOException;
 
 public class UnoJoyProcessingVisualizer extends PApplet {
 
+
+
 /* Code for UnoJoy Processing Visualizer
 
     Wouter Walmink + Alan Chatham
@@ -27,6 +30,8 @@ public class UnoJoyProcessingVisualizer extends PApplet {
     Code for dropdown menu from
     http://forum.processing.org/topic/simple-code-create-a-drop-down-list-with-available-com-ports
 */
+
+
 
 // Dropdown menu stuff
 ControlP5 controlP5;             //Define the variable controlP5 as a ControlP5 type.
@@ -119,11 +124,11 @@ public void setup() {
     SerialPort = new Serial(this, portName, 38400);
   }
   font = loadFont("AngsanaNew-28.vlw");
-  size( 600,600 );
+  
   controlP5 = new ControlP5(this);
   rectMode( CENTER );
   ellipseMode( CENTER );
-  smooth();
+  
 
   // load image
   controller = loadImage( "data/game_controller.png" );
@@ -146,7 +151,7 @@ public void controlEvent(ControlEvent theEvent) {
   if (theEvent.isGroup()) 
   {
     //Store the value of which box was selected, we will use this to acces a string (char array).
-    float S = theEvent.group().value();
+    float S = theEvent.group().getValue();
     //Since the list returns a float, we need to convert it to an int. For that we us the int() function.
     Ss = PApplet.parseInt(S);
     //With this code, its a one time setup, so we state that the selection of port has been done. You could modify the code to stop the serial connection and establish a new one.
@@ -173,20 +178,20 @@ public void customize(DropdownList ddl) {
   //Set the height of the bar itself.
   ddl.setBarHeight(15);
   //Set the lable of the bar when nothing is selected.
-  ddl.captionLabel().set("Select COM port");
+  //ddl.setCaptionLabel("Select COM port");
   //Set the top margin of the lable.
-  ddl.captionLabel().style().marginTop = 3;
+  //ddl.captionLabel().style().marginTop = 3;
   //Set the left margin of the lable.
-  ddl.captionLabel().style().marginLeft = 3;
+  //ddl.captionLabel().style().marginLeft = 3;
   //Set the top margin of the value selected.
-  ddl.valueLabel().style().marginTop = 3;
+  //ddl.valueLabel().style().marginTop = 3;
   //Store the Serial ports in the string comList (char array).
-  comList = SerialPort.list();
+  comList = Serial.list();
   if (Serial.list().length == 0)
     return;
   //We need to know how many ports there are, to know how many items to add to the list, so we will convert it to a String object (part of a class).
   String comlist = join(comList, ",");
-  //We also need how many characters there is in a single port name, we\u00b4ll store the chars here for counting later.
+  //We also need how many characters there is in a single port name, we´ll store the chars here for counting later.
   String COMlist = comList[0];
   //Here we count the length of each port name.
   int size2 = COMlist.length();
@@ -396,6 +401,7 @@ public void readController(){
   // Wait 25ms to get in data, or make these buttons zeroes
   rightStickData.x = readSerialPort(25, 128);
   
+  SerialPort.write(6);
   // Wait 25ms to get in data, or make these buttons zeroes
   rightStickData.y = readSerialPort(25, 128);
   
@@ -471,8 +477,6 @@ public void turnAllOff(){
   dpadRightOn = 0;
   dpadDownOn = 0;
 }
-
-
 class Point {
   
   float x,y;
@@ -482,6 +486,7 @@ class Point {
     this.y = y; 
   }
 }
+  public void settings() {  size( 600,600 );  smooth(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "UnoJoyProcessingVisualizer" };
     if (passedArgs != null) {

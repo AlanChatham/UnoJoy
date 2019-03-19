@@ -1,6 +1,6 @@
 #
 # 
-# Copyright (c) 2003, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2003, 2011, Oracle and/or its affiliates. All rights reserved.
 # ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 #
 #
@@ -40,6 +40,7 @@ allfonts.devanagari=Mangal
 allfonts.dingbats=Wingdings
 allfonts.lucida=Lucida Sans Regular
 allfonts.symbol=Symbol
+allfonts.symbols=Segoe UI Symbol
 allfonts.thai=Lucida Sans Regular
 allfonts.georgian=Sylfaen
 
@@ -236,13 +237,13 @@ sequence.dialoginput.x-windows-949=alphabetic,korean,dingbats,symbol
 
 sequence.allfonts.x-windows-874=alphabetic,thai,dingbats,symbol
 
-sequence.fallback=lucida,\
+sequence.fallback=lucida,symbols,\
                   chinese-ms950,chinese-hkscs,chinese-ms936,chinese-gb18030,\
                   japanese,korean,chinese-ms950-extb,chinese-ms936-extb,georgian
 
 # Exclusion Ranges
 
-exclusion.alphabetic=0700-1e9f,1f00-20ab,20ad-f8ff
+exclusion.alphabetic=0700-1e9f,1f00-2017,2020-20ab,20ad-f8ff
 exclusion.chinese-gb18030=0390-03d6,2200-22ef,2701-27be
 exclusion.hebrew=0041-005a,0060-007a,007f-00ff,20ac-20ac
 
@@ -298,3 +299,4 @@ filename.Symbol=SYMBOL.TTF
 filename.Wingdings=WINGDING.TTF
 
 filename.Sylfaen=sylfaen.ttf
+filename.Segoe_UI_Symbol=SEGUISYM.TTF

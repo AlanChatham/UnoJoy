@@ -1,4 +1,5 @@
 #!/bin/sh
 
-APPDIR=$(dirname "$0")
-java  -Djava.library.path="$APPDIR:$APPDIR/lib" -cp "$APPDIR/lib/controlP5.jar:$APPDIR/lib/UnoJoyProcessingVisualizer.jar:$APPDIR/lib/core.jar:$APPDIR/lib/jogl-all.jar:$APPDIR/lib/gluegen-rt.jar:$APPDIR/lib/jogl-all-natives-linux-i586.jar:$APPDIR/lib/gluegen-rt-natives-linux-i586.jar:$APPDIR/lib/RXTXcomm.jar:$APPDIR/lib/serial.jar" UnoJoyProcessingVisualizer "$@"
+APPDIR=$(readlink -f "$0")
+APPDIR=$(dirname "$APPDIR")
+java -Xms64m -Xmx1024m -Djna.nosys=true -Djava.library.path="$APPDIR:$APPDIR/lib" -cp "$APPDIR:$APPDIR/lib/controlP5.jar:$APPDIR/lib/UnoJoyProcessingVisualizer.jar:$APPDIR/lib/core.jar:$APPDIR/lib/jogl-all.jar:$APPDIR/lib/gluegen-rt.jar:$APPDIR/lib/jogl-all-natives-linux-i586.jar:$APPDIR/lib/gluegen-rt-natives-linux-i586.jar:$APPDIR/lib/jssc.jar:$APPDIR/lib/serial.jar:$APPDIR/lib/controlP5.jar" UnoJoyProcessingVisualizer "$@"
