@@ -55,10 +55,10 @@ typedef struct {
 
 	// Gonna assume these are button analog values for the d-pad.
 	// NOTE: NOT EVEN SURE THIS IS RIGHT, OR IN THE CORRECT ORDER
-	uint8_t up_axis;
 	uint8_t right_axis;
-	uint8_t down_axis;
 	uint8_t left_axis;
+	uint8_t up_axis;
+	uint8_t down_axis;
 
 	// button axis, 0x00 = unpressed, 0xff = fully pressed
 
