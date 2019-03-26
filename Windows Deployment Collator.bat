@@ -30,7 +30,7 @@ if exist "UnoJoy/UnoJoy.h" (
   copy /y "UnoJoy\TurnIntoAnArduino.bat" "temp/UnoJoy/TurnIntoAnArduino.bat" 
   copy /y "UnoJoy\UnoJoy.h" "temp/UnoJoy/UnoJoy.h" 
   echo "stuff"
-  copy /y "Drivers\UnoJoyDriverInstaller.bat" "temp/UnoJoy/UnoJoyDriverInstaller.bat"  
+  copy /y "Drivers\UnoJoyDriverInstaller.bat" "temp/UnoJoy/Drivers/UnoJoyDriverInstaller.bat"  
   
   REM Move up a directory
   cd temp/

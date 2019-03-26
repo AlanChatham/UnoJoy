@@ -51,11 +51,24 @@ Getting Started
 	folder. Open up UnoJoyArduinoSample and upload that code
 	to your Arduino.
 
-	Next, test to make sure that it's working - open up the 
-	UnoJoyProcessingVisualizer sketch in processing and run it.
+	Next, test to make sure that it's working, we have a Processing
+    sketch to test your controller without having to cycle through
+	the process of going reflashing the firmware back and forth.
+	Go to https://processing.org/ to download and install Processing.
+	Then you can run the UnoJoyProcessingVisualizer sketch.
+	
+	*Note* You'll need to install the ControlP5 library in order
+	for the UnoJoyProcessingVisualizer to work. To install that,
+	in Processing, go to Sketch -> Import Library -> Add Library...
+	search for ControlP5, install it, then possibly restart Processing.
+	
+	*Second Note* The compiled stand-alone processing applications seem
+	to have stopped working, and with Java being a pain, they're not currently
+	being supported. 
+	
 	You should see a representation of the controller, and if you
 	ground any of the pins between 2 and 12, you should see
-	buttons on the controller light up.  Now, we move onto the hardware
+	buttons on the controller light up.  Now, we move onto the hardware!
 
 
 	Hardware
@@ -133,3 +146,13 @@ Getting Started
 		In DFU mode, you should see  a device named Atmel corp. etc.
 		In UnoJoy mode, you should see a device named Cygnal Integrated Products etc.
 
+
+		
+Using the Deployment Collators
+==============================
+	There are a couple of programs for creating a quick release zip file.
+	The OSX one may or may not work; I haven't had a Mac in years so I haven't tested it.
+	To use the Windows one, you'll need to install 7zip (https://www.7-zip.org/),
+	then add it to your system or user path (search for Environment Variables, then edit
+	the Path variable and add the 7zip folder). Then you should just be able to use
+	Windows Deployment Collator.bat.
