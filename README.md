@@ -15,7 +15,7 @@ Latest Update
 	Mustafa Cem Avci, 17/06/2020
 	LONG LIVE OPEN SOURCE!  
 	
-	YouTube:https://www.youtube.com/watch?v=Rq2QivBzshs
+	YouTube: https://www.youtube.com/watch?v=Rq2QivBzshs
 	
 
 UnoJoy
