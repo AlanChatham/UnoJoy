@@ -64,7 +64,7 @@
 // INF file is needed to load the driver.  These numbers need to
 // match the INF file.
 #define VENDOR_ID		0x10C4
-#define PRODUCT_ID		0x82C0
+#define PRODUCT_ID		0x82C2
 
 
 // USB devices are supposed to implement a halt feature, which is
