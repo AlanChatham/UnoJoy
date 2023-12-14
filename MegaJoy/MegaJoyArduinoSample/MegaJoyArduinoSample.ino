@@ -38,10 +38,8 @@ megaJoyControllerData_t getControllerData(void){
   }
   
   // Set the analog sticks
-  //  Since analogRead(pin) returns a 10 bit value,
-  //  we need to perform a bit shift operation to
-  //  lose the 2 least significant bits and get an
-  //  8 bit number that we can use 
+  //  Unlike UnoJoy, which has 8-bit analog axes for PS3 compatibilty,
+  //  MegaJoy uses 10-bit analog values, to fully use the Arduino analogRead range
   controllerData.analogAxisArray[0] = analogRead(A0);
   controllerData.analogAxisArray[1] = analogRead(A1);
   controllerData.analogAxisArray[2] = analogRead(A2); 
