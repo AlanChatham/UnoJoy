@@ -144,7 +144,7 @@
   //  and the timer interrupt for actually sending the data back and forth.
   void setupMegaJoy(void){
     // First, let's zero out our controller data buffer (center the sticks)
-    controllerDataBuffer = getBlankDataForController();
+    controllerDataBuffer = getBlankDataForMegaController();
   
     // Start the serial port at the specific, low-error rate UnoJoy uses.
     //  If you want to change the rate, you'll have to change it in the
