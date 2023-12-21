@@ -1,3 +1,23 @@
+***
+Latest Update
+====
+	With this update you can now make your own steering wheel and pedal set for the racing game 
+	you always wanted to play with controller!
+	
+	You need an MPU6050 IMU sensor for this project, simply connect SDA and SCL pins to A4 and A5 respectively,
+	VCC -> 5V GND->GND
+	
+	or you can use the SDA SCL pins on Arduino close to the GND pin if you need more analog inputs.
+        You can find the program for the gaming 900 degree wheel set on the UnoJoySteeringWheel folder.
+	Upload the program and follow the instructions!
+	
+	Feel free to contact me for any problems on the program : cem.avci@gazi.edu.tr
+	Mustafa Cem Avci, 17/06/2020
+	LONG LIVE OPEN SOURCE!  
+	
+	YouTube: https://www.youtube.com/watch?v=Rq2QivBzshs
+	
+
 UnoJoy
 ======
 
