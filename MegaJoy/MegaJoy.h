@@ -213,7 +213,7 @@
     controllerData.dpad1DownOn = 0;  
     
     //Set the sticks to 512 - centered
-    for (int i = 0; i < ANALOG_AXIS_ARRAY_SIZE; i++{
+    for (int i = 0; i < ANALOG_AXIS_ARRAY_SIZE; i++){
       controllerData.analogAxisArray[i] = 512;
     }    
     // And return the data!
